@@ -1,0 +1,90 @@
+==========================================
+  INSTRUCCIONES PARA LEVANTAR EL BACKEND
+==========================================
+
+1. INSTALAR UV (si no lo tienes):
+   pip install uv
+
+2. IR A LA CARPETA BACKEND:
+   cd backend
+
+3. CREAR ENTORNO VIRTUAL E INSTALAR DEPENDENCIAS:
+   uv venv
+   uv pip install -e .
+
+4. CONFIGURAR GMAIL EN .env:
+   - Abre el archivo .env
+   - Cambia EMAIL_HOST_USER por tu correo Gmail
+   - Cambia EMAIL_HOST_PASSWORD por tu App Password de Gmail
+   - Para generar App Password:
+     a) Ve a https://myaccount.google.com
+     b) Seguridad > Verificacion en 2 pasos (activala)
+     c) Busca "Contrasenas de aplicaciones"
+     d) Genera una para "Correo"
+     e) Copia el codigo de 16 caracteres al .env
+
+5. EJECUTAR MIGRACIONES:
+   uv run python manage.py makemigrations
+   uv run python manage.py migrate
+
+6. CREAR SUPERUSUARIO:
+   uv run python manage.py createsuperuser
+
+7. LEVANTAR EL SERVIDOR:
+   uv run python manage.py runserver 0.0.0.0:8000
+
+8. PROBAR:
+   - Admin Django: http://localhost:8000/admin/
+   - API: http://localhost:8000/api/
+
+==========================================
+  ENDPOINTS QUE CONSUME LA APP ANDROID
+==========================================
+
+AUTH:
+  POST /api/auth/login/
+  POST /api/auth/register/
+  POST /api/auth/logout/
+  POST /api/auth/token/refresh/
+  POST /api/auth/password-reset/
+  POST /api/auth/password-reset/confirm/
+
+USERS (admin):
+  GET    /api/users/
+  POST   /api/users/
+  GET    /api/users/{id}/
+  PATCH  /api/users/{id}/
+  DELETE /api/users/{id}/
+  POST   /api/users/{id}/toggle-active/
+  GET    /api/users/profile/
+  GET    /api/users/stats/
+
+CATEGORIES:
+  GET    /api/categories/
+  POST   /api/categories/
+  GET    /api/categories/{id}/
+  PATCH  /api/categories/{id}/
+  DELETE /api/categories/{id}/
+  GET    /api/categories/stats/
+
+PRODUCTS:
+  GET    /api/products/
+  POST   /api/products/
+  GET    /api/products/{id}/
+  PATCH  /api/products/{id}/
+  DELETE /api/products/{id}/
+  GET    /api/products/available/
+  POST   /api/products/{id}/restock/
+  GET    /api/products/stats/
+
+ORDERS:
+  GET    /api/orders/
+  POST   /api/orders/
+  GET    /api/orders/{id}/
+  POST   /api/orders/{id}/add-item/
+  POST   /api/orders/{id}/confirm/
+  POST   /api/orders/{id}/update-status/
+  GET    /api/orders/stats/
+
+EMAILS:
+  POST   /api/emails/send/
