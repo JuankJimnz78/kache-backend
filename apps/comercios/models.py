@@ -2,6 +2,19 @@ from django.db import models
 from django.utils import timezone
 
 
+class Ciudad(models.Model):
+    nombre = models.CharField(max_length=100)
+    provincia = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ["provincia", "nombre"]
+        unique_together = ["nombre", "provincia"]
+        verbose_name_plural = "ciudades"
+
+    def __str__(self):
+        return f"{self.nombre} ({self.provincia})"
+
+
 class Comercio(models.Model):
     """Cadena/negocio comparado en Kache (ej. Supermaxi, Fybeca, Kywi)."""
 
@@ -20,9 +33,6 @@ class Comercio(models.Model):
     sitio_web = models.URLField(blank=True, null=True)
     activo = models.BooleanField(default=True)
 
-    # Publicidad: el comercio paga por aparecer destacado en el selector
-    # de categorías. fecha_fin_destacado permite que la promoción se
-    # desactive sola sin que nadie tenga que acordarse de desmarcarla.
     destacado = models.BooleanField(default=False)
     fecha_fin_destacado = models.DateField(
         null=True, blank=True,
@@ -37,7 +47,6 @@ class Comercio(models.Model):
 
     @property
     def destacado_activo(self):
-        """True solo si destacado=True Y (no tiene fecha de fin, o esa fecha no ha pasado)."""
         if not self.destacado:
             return False
         if self.fecha_fin_destacado is None:
@@ -46,15 +55,17 @@ class Comercio(models.Model):
 
 
 class Sucursal(models.Model):
-    """
-    Ubicación física de un Comercio. Ya NO determina el precio (eso lo hace
-    Comercio directamente vía apps.precios.Precio) — sucursal es solo
-    información de localización: dirección, ciudad, etc.
-    """
+    """Ubicación física de un Comercio."""
 
     comercio = models.ForeignKey(Comercio, on_delete=models.CASCADE, related_name="sucursales")
     nombre_sucursal = models.CharField(max_length=100)
-    ciudad = models.CharField(max_length=100)
+    ciudad = models.ForeignKey(
+        Ciudad,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="sucursales",
+    )
     direccion = models.CharField(max_length=255)
     activo = models.BooleanField(default=True)
 
@@ -63,4 +74,5 @@ class Sucursal(models.Model):
         verbose_name_plural = "sucursales"
 
     def __str__(self):
-        return f"{self.nombre_sucursal} - {self.ciudad}"
+        ciudad_str = self.ciudad.nombre if self.ciudad else "—"
+        return f"{self.nombre_sucursal} - {ciudad_str}"

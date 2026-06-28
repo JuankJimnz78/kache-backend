@@ -2,11 +2,57 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAdminUser
 from rest_framework.response import Response
 
-from .models import Comercio, Sucursal
+from .models import Ciudad, Comercio, Sucursal
 from .serializers import (
+    CiudadSerializer, CiudadRequestSerializer,
     ComercioSerializer, ComercioRequestSerializer,
     SucursalSerializer, SucursalRequestSerializer,
 )
+
+
+class CiudadListCreateView(generics.ListCreateAPIView):
+    queryset = Ciudad.objects.all()
+
+    def get_permissions(self):
+        if self.request.method == "GET":
+            return [AllowAny()]
+        return [IsAdminUser()]
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return CiudadRequestSerializer
+        return CiudadSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = CiudadRequestSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        ciudad = serializer.save()
+        return Response(CiudadSerializer(ciudad).data, status=status.HTTP_201_CREATED)
+
+
+class CiudadDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Ciudad.objects.all()
+
+    def get_permissions(self):
+        if self.request.method == "GET":
+            return [AllowAny()]
+        return [IsAdminUser()]
+
+    def get_serializer_class(self):
+        if self.request.method in ("PATCH", "PUT"):
+            return CiudadRequestSerializer
+        return CiudadSerializer
+
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop("partial", False)
+        instance = self.get_object()
+        serializer = CiudadRequestSerializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        return Response(CiudadSerializer(serializer.save()).data)
+
+    def partial_update(self, request, *args, **kwargs):
+        kwargs["partial"] = True
+        return self.update(request, *args, **kwargs)
 
 
 class ComercioListCreateView(generics.ListCreateAPIView):
@@ -53,10 +99,7 @@ class ComercioListCreateView(generics.ListCreateAPIView):
         serializer = ComercioRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         comercio = serializer.save()
-        return Response(
-            ComercioSerializer(comercio).data,
-            status=status.HTTP_201_CREATED,
-        )
+        return Response(ComercioSerializer(comercio).data, status=status.HTTP_201_CREATED)
 
 
 class ComercioDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -77,8 +120,7 @@ class ComercioDetailView(generics.RetrieveUpdateDestroyAPIView):
         instance = self.get_object()
         serializer = ComercioRequestSerializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
-        comercio = serializer.save()
-        return Response(ComercioSerializer(comercio).data)
+        return Response(ComercioSerializer(serializer.save()).data)
 
     def partial_update(self, request, *args, **kwargs):
         kwargs["partial"] = True
@@ -97,16 +139,19 @@ class SucursalListCreateView(generics.ListCreateAPIView):
         return SucursalSerializer
 
     def get_queryset(self):
-        qs = Sucursal.objects.select_related("comercio").all()
+        qs = Sucursal.objects.select_related("comercio", "ciudad").all()
         params = self.request.query_params
 
         comercio = params.get("comercio") or params.get("id_comercio")
         if comercio:
             qs = qs.filter(comercio_id=comercio)
 
-        ciudad = params.get("ciudad")
+        ciudad = params.get("ciudad") or params.get("id_ciudad")
         if ciudad:
-            qs = qs.filter(ciudad__icontains=ciudad)
+            if ciudad.isdigit():
+                qs = qs.filter(ciudad_id=ciudad)
+            else:
+                qs = qs.filter(ciudad__nombre__icontains=ciudad)
 
         return qs
 
@@ -114,14 +159,11 @@ class SucursalListCreateView(generics.ListCreateAPIView):
         serializer = SucursalRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         sucursal = serializer.save()
-        return Response(
-            SucursalSerializer(sucursal).data,
-            status=status.HTTP_201_CREATED,
-        )
+        return Response(SucursalSerializer(sucursal).data, status=status.HTTP_201_CREATED)
 
 
 class SucursalDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Sucursal.objects.select_related("comercio").all()
+    queryset = Sucursal.objects.select_related("comercio", "ciudad").all()
 
     def get_permissions(self):
         if self.request.method == "GET":
@@ -138,8 +180,7 @@ class SucursalDetailView(generics.RetrieveUpdateDestroyAPIView):
         instance = self.get_object()
         serializer = SucursalRequestSerializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
-        sucursal = serializer.save()
-        return Response(SucursalSerializer(sucursal).data)
+        return Response(SucursalSerializer(serializer.save()).data)
 
     def partial_update(self, request, *args, **kwargs):
         kwargs["partial"] = True

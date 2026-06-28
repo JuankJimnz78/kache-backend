@@ -1,0 +1,811 @@
+{
+  "info": {
+    "name": "Kache API",
+    "_postman_id": "kache-api-v1",
+    "description": "Colección completa de endpoints — Kache Comparador de Precios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000", "type": "string" },
+    { "key": "token",    "value": "",                      "type": "string" }
+  ],
+  "item": [
+
+    {
+      "name": "🔐 Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript",
+            "exec": ["var j = pm.response.json(); if (j.access) { pm.collectionVariables.set('token', j.access); console.log('Token guardado'); }"] } }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/login/", "host": ["{{base_url}}"], "path": ["api","auth","login",""] }
+          }
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"username\": \"usuario1\",\n  \"email\": \"usuario1@correo.com\",\n  \"password\": \"Pass1234!\",\n  \"password2\": \"Pass1234!\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/register/", "host": ["{{base_url}}"], "path": ["api","auth","register",""] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"refresh\": \"PEGA_AQUI_TU_REFRESH_TOKEN\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/logout/", "host": ["{{base_url}}"], "path": ["api","auth","logout",""] }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"refresh\": \"PEGA_AQUI_TU_REFRESH_TOKEN\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/token/refresh/", "host": ["{{base_url}}"], "path": ["api","auth","token","refresh",""] }
+          }
+        },
+        {
+          "name": "Password Reset — Solicitar",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"usuario1@correo.com\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/password-reset/", "host": ["{{base_url}}"], "path": ["api","auth","password-reset",""] }
+          }
+        },
+        {
+          "name": "Password Reset — Confirmar",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"uid\": \"UID_DEL_CORREO\",\n  \"token\": \"TOKEN_DEL_CORREO\",\n  \"new_password\": \"NuevaPass123!\",\n  \"new_password2\": \"NuevaPass123!\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/auth/password-reset/confirm/", "host": ["{{base_url}}"], "path": ["api","auth","password-reset","confirm",""] }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "👤 Usuarios",
+      "item": [
+        {
+          "name": "Listar usuarios",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/", "host": ["{{base_url}}"], "path": ["api","users",""],
+              "query": [
+                { "key": "search",    "value": "marcos", "disabled": true },
+                { "key": "is_staff",  "value": "true",   "disabled": true },
+                { "key": "is_active", "value": "true",   "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear usuario (admin)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"username\": \"nuevo_usuario\",\n  \"email\": \"nuevo@correo.com\",\n  \"first_name\": \"Nuevo\",\n  \"last_name\": \"Usuario\",\n  \"password\": \"Pass1234!\",\n  \"is_staff\": false,\n  \"is_active\": true\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/users/", "host": ["{{base_url}}"], "path": ["api","users",""] }
+          }
+        },
+        {
+          "name": "Mi perfil",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/profile/", "host": ["{{base_url}}"], "path": ["api","users","profile",""] }
+          }
+        },
+        {
+          "name": "Estadísticas de usuarios",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/stats/", "host": ["{{base_url}}"], "path": ["api","users","stats",""] }
+          }
+        },
+        {
+          "name": "Ver búsquedas recientes",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/busquedas/", "host": ["{{base_url}}"], "path": ["api","users","busquedas",""] }
+          }
+        },
+        {
+          "name": "Registrar búsqueda",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"termino\": \"televisor samsung\",\n  \"num_resultados\": 12\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/users/busquedas/", "host": ["{{base_url}}"], "path": ["api","users","busquedas",""] }
+          }
+        },
+        {
+          "name": "Limpiar búsquedas recientes",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/busquedas/limpiar/", "host": ["{{base_url}}"], "path": ["api","users","busquedas","limpiar",""] }
+          }
+        },
+        {
+          "name": "Ver usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/1/", "host": ["{{base_url}}"], "path": ["api","users","1",""] }
+          }
+        },
+        {
+          "name": "Editar usuario",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"first_name\": \"Marcos\",\n  \"last_name\": \"Actualizado\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/users/1/", "host": ["{{base_url}}"], "path": ["api","users","1",""] }
+          }
+        },
+        {
+          "name": "Toggle activo/inactivo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/users/1/toggle-active/", "host": ["{{base_url}}"], "path": ["api","users","1","toggle-active",""] }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "🏷️ Catálogo",
+      "item": [
+        {
+          "name": "Marcas",
+          "item": [
+            {
+              "name": "Listar marcas",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/marcas/", "host": ["{{base_url}}"], "path": ["api","kache","marcas",""] }
+              }
+            },
+            {
+              "name": "Crear marca",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"La Favorita\",\n  \"pais_origen\": \"Ecuador\",\n  \"sitio_web\": \"https://www.lafavorita.com\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/marcas/", "host": ["{{base_url}}"], "path": ["api","kache","marcas",""] }
+              }
+            },
+            {
+              "name": "Ver marca",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/marcas/1/", "host": ["{{base_url}}"], "path": ["api","kache","marcas","1",""] }
+              }
+            },
+            {
+              "name": "Editar marca",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"pais_origen\": \"Ecuador\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/marcas/1/", "host": ["{{base_url}}"], "path": ["api","kache","marcas","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar marca",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/marcas/1/", "host": ["{{base_url}}"], "path": ["api","kache","marcas","1",""] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Etiquetas",
+          "item": [
+            {
+              "name": "Listar etiquetas",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/etiquetas/", "host": ["{{base_url}}"], "path": ["api","kache","etiquetas",""] }
+              }
+            },
+            {
+              "name": "Crear etiqueta",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"sin gluten\",\n  \"descripcion\": \"Producto apto para celíacos\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/etiquetas/", "host": ["{{base_url}}"], "path": ["api","kache","etiquetas",""] }
+              }
+            },
+            {
+              "name": "Ver etiqueta",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/etiquetas/1/", "host": ["{{base_url}}"], "path": ["api","kache","etiquetas","1",""] }
+              }
+            },
+            {
+              "name": "Editar etiqueta",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"descripcion\": \"Sin gluten certificado\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/etiquetas/1/", "host": ["{{base_url}}"], "path": ["api","kache","etiquetas","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar etiqueta",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/etiquetas/1/", "host": ["{{base_url}}"], "path": ["api","kache","etiquetas","1",""] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Categorías",
+          "item": [
+            {
+              "name": "Listar categorías",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/categorias/", "host": ["{{base_url}}"], "path": ["api","kache","categorias",""] }
+              }
+            },
+            {
+              "name": "Crear categoría",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Lácteos\",\n  \"descripcion\": \"Leches, quesos y yogures\",\n  \"categoria_padre\": null\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/categorias/", "host": ["{{base_url}}"], "path": ["api","kache","categorias",""] }
+              }
+            },
+            {
+              "name": "Ver categoría",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/categorias/1/", "host": ["{{base_url}}"], "path": ["api","kache","categorias","1",""] }
+              }
+            },
+            {
+              "name": "Editar categoría",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"descripcion\": \"Descripción actualizada\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/categorias/1/", "host": ["{{base_url}}"], "path": ["api","kache","categorias","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar categoría",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/categorias/1/", "host": ["{{base_url}}"], "path": ["api","kache","categorias","1",""] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Productos",
+          "item": [
+            {
+              "name": "Buscar productos",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/productos/", "host": ["{{base_url}}"], "path": ["api","kache","productos",""],
+                  "query": [
+                    { "key": "buscar",     "value": "leche",          "disabled": true },
+                    { "key": "categoria",  "value": "1",              "disabled": true },
+                    { "key": "marca",      "value": "1",              "disabled": true },
+                    { "key": "etiqueta",   "value": "sin gluten",     "disabled": true },
+                    { "key": "tipo",       "value": "supermercado",   "disabled": true },
+                    { "key": "page",       "value": "1",              "disabled": true }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Crear producto",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Leche Entera La Lechera 1L\",\n  \"id_marca\": 1,\n  \"codigo_barras\": \"7501055316552\",\n  \"descripcion\": \"Leche entera pasteurizada\",\n  \"unidad_medida\": \"1L\",\n  \"id_categoria\": 1,\n  \"etiquetas\": []\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/productos/", "host": ["{{base_url}}"], "path": ["api","kache","productos",""] }
+              }
+            },
+            {
+              "name": "Ver producto",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/productos/1/", "host": ["{{base_url}}"], "path": ["api","kache","productos","1",""] }
+              }
+            },
+            {
+              "name": "Editar producto",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"descripcion\": \"Leche entera UHT 1 litro\",\n  \"etiquetas\": [1]\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/productos/1/", "host": ["{{base_url}}"], "path": ["api","kache","productos","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar producto",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/productos/1/", "host": ["{{base_url}}"], "path": ["api","kache","productos","1",""] }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "🏪 Comercios",
+      "item": [
+        {
+          "name": "Ciudades",
+          "item": [
+            {
+              "name": "Listar ciudades",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/ciudades/", "host": ["{{base_url}}"], "path": ["api","kache","ciudades",""] }
+              }
+            },
+            {
+              "name": "Crear ciudad",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Quito\",\n  \"provincia\": \"Pichincha\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/ciudades/", "host": ["{{base_url}}"], "path": ["api","kache","ciudades",""] }
+              }
+            },
+            {
+              "name": "Ver ciudad",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/ciudades/1/", "host": ["{{base_url}}"], "path": ["api","kache","ciudades","1",""] }
+              }
+            },
+            {
+              "name": "Editar ciudad",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"provincia\": \"Pichincha\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/ciudades/1/", "host": ["{{base_url}}"], "path": ["api","kache","ciudades","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar ciudad",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/ciudades/1/", "host": ["{{base_url}}"], "path": ["api","kache","ciudades","1",""] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Comercios",
+          "item": [
+            {
+              "name": "Listar comercios",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/comercios/", "host": ["{{base_url}}"], "path": ["api","kache","comercios",""],
+                  "query": [
+                    { "key": "tipo",   "value": "supermercado", "disabled": true },
+                    { "key": "activo", "value": "true",         "disabled": true }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Crear comercio",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Supermaxi\",\n  \"tipo\": \"supermercado\",\n  \"logo_url\": null,\n  \"sitio_web\": \"https://www.supermaxi.com\",\n  \"activo\": true,\n  \"destacado\": false,\n  \"fecha_fin_destacado\": null\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/comercios/", "host": ["{{base_url}}"], "path": ["api","kache","comercios",""] }
+              }
+            },
+            {
+              "name": "Ver comercio",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/comercios/1/", "host": ["{{base_url}}"], "path": ["api","kache","comercios","1",""] }
+              }
+            },
+            {
+              "name": "Editar comercio",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"destacado\": true,\n  \"fecha_fin_destacado\": \"2025-12-31\"\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/comercios/1/", "host": ["{{base_url}}"], "path": ["api","kache","comercios","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar comercio",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/comercios/1/", "host": ["{{base_url}}"], "path": ["api","kache","comercios","1",""] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Sucursales",
+          "item": [
+            {
+              "name": "Listar sucursales",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/sucursales/", "host": ["{{base_url}}"], "path": ["api","kache","sucursales",""],
+                  "query": [
+                    { "key": "comercio", "value": "1", "disabled": true },
+                    { "key": "ciudad",   "value": "1", "disabled": true }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Crear sucursal",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"id_comercio\": 1,\n  \"nombre_sucursal\": \"Supermaxi Iñaquito\",\n  \"id_ciudad\": 1,\n  \"direccion\": \"Av. Amazonas y Naciones Unidas\",\n  \"activo\": true\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/sucursales/", "host": ["{{base_url}}"], "path": ["api","kache","sucursales",""] }
+              }
+            },
+            {
+              "name": "Ver sucursal",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": { "raw": "{{base_url}}/api/kache/sucursales/1/", "host": ["{{base_url}}"], "path": ["api","kache","sucursales","1",""] }
+              }
+            },
+            {
+              "name": "Editar sucursal",
+              "request": {
+                "method": "PATCH",
+                "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+                "body": { "mode": "raw", "raw": "{\n  \"activo\": false\n}", "options": { "raw": { "language": "json" } } },
+                "url": { "raw": "{{base_url}}/api/kache/sucursales/1/", "host": ["{{base_url}}"], "path": ["api","kache","sucursales","1",""] }
+              }
+            },
+            {
+              "name": "Eliminar sucursal",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "{{base_url}}/api/kache/sucursales/1/", "host": ["{{base_url}}"], "path": ["api","kache","sucursales","1",""] }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "💰 Precios",
+      "item": [
+        {
+          "name": "Listar precios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/kache/precios/", "host": ["{{base_url}}"], "path": ["api","kache","precios",""],
+              "query": [
+                { "key": "producto", "value": "1", "disabled": true },
+                { "key": "comercio", "value": "1", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear precio",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"producto\": 1,\n  \"comercio\": 1,\n  \"precio_actual\": 1.85,\n  \"precio_oferta\": null,\n  \"en_oferta\": false\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/precios/", "host": ["{{base_url}}"], "path": ["api","kache","precios",""] }
+          }
+        },
+        {
+          "name": "Ver precio",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/kache/precios/1/", "host": ["{{base_url}}"], "path": ["api","kache","precios","1",""] }
+          }
+        },
+        {
+          "name": "Actualizar precio",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"precio_actual\": 1.99,\n  \"en_oferta\": true,\n  \"precio_oferta\": 1.75\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/precios/1/", "host": ["{{base_url}}"], "path": ["api","kache","precios","1",""] }
+          }
+        },
+        {
+          "name": "Eliminar precio",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/precios/1/", "host": ["{{base_url}}"], "path": ["api","kache","precios","1",""] }
+          }
+        },
+        {
+          "name": "Historial de precios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/kache/historial-precios/", "host": ["{{base_url}}"], "path": ["api","kache","historial-precios",""],
+              "query": [
+                { "key": "producto", "value": "1", "disabled": true },
+                { "key": "comercio", "value": "1", "disabled": true }
+              ]
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "📊 Comparador",
+      "item": [
+        {
+          "name": "Listar listas de comparación",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion",""] }
+          }
+        },
+        {
+          "name": "Crear lista de comparación",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Compras del mes\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion",""] }
+          }
+        },
+        {
+          "name": "Ver lista de comparación",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/1/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion","1",""] }
+          }
+        },
+        {
+          "name": "Editar lista de comparación",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Mi canasta semanal\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/1/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion","1",""] }
+          }
+        },
+        {
+          "name": "Eliminar lista de comparación",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/1/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion","1",""] }
+          }
+        },
+        {
+          "name": "Agregar item a lista",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"producto\": 1,\n  \"comercio\": 1,\n  \"precio_momento\": 1.85\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/listas-comparacion/1/items/", "host": ["{{base_url}}"], "path": ["api","kache","listas-comparacion","1","items",""] }
+          }
+        },
+        {
+          "name": "Eliminar item de lista",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/items-comparacion/1/", "host": ["{{base_url}}"], "path": ["api","kache","items-comparacion","1",""] }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "⭐ Extras",
+      "item": [
+        {
+          "name": "Ver mi perfil extendido",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/perfil/", "host": ["{{base_url}}"], "path": ["api","kache","perfil",""] }
+          }
+        },
+        {
+          "name": "Actualizar perfil extendido",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"telefono\": \"0991234567\",\n  \"ciudad\": \"Quito\",\n  \"foto_url\": null\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/perfil/", "host": ["{{base_url}}"], "path": ["api","kache","perfil",""] }
+          }
+        },
+        {
+          "name": "Ver publicidad vigente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/kache/publicidad/", "host": ["{{base_url}}"], "path": ["api","kache","publicidad",""] }
+          }
+        },
+        {
+          "name": "Listar favoritos",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/favoritos/", "host": ["{{base_url}}"], "path": ["api","kache","favoritos",""] }
+          }
+        },
+        {
+          "name": "Agregar favorito",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"producto\": 1\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/favoritos/", "host": ["{{base_url}}"], "path": ["api","kache","favoritos",""] }
+          }
+        },
+        {
+          "name": "Eliminar favorito",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/favoritos/1/", "host": ["{{base_url}}"], "path": ["api","kache","favoritos","1",""] }
+          }
+        },
+        {
+          "name": "Listar alertas de precio",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/alertas-precio/", "host": ["{{base_url}}"], "path": ["api","kache","alertas-precio",""] }
+          }
+        },
+        {
+          "name": "Crear alerta de precio",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"producto\": 1,\n  \"comercio\": null,\n  \"precio_objetivo\": 1.50,\n  \"activa\": true\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/alertas-precio/", "host": ["{{base_url}}"], "path": ["api","kache","alertas-precio",""] }
+          }
+        },
+        {
+          "name": "Editar alerta de precio",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"precio_objetivo\": 1.40,\n  \"activa\": false\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/alertas-precio/1/", "host": ["{{base_url}}"], "path": ["api","kache","alertas-precio","1",""] }
+          }
+        },
+        {
+          "name": "Eliminar alerta de precio",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/alertas-precio/1/", "host": ["{{base_url}}"], "path": ["api","kache","alertas-precio","1",""] }
+          }
+        },
+        {
+          "name": "Listar notificaciones",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/notificaciones/", "host": ["{{base_url}}"], "path": ["api","kache","notificaciones",""] }
+          }
+        },
+        {
+          "name": "Marcar notificación como leída",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"leida\": true\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/notificaciones/1/", "host": ["{{base_url}}"], "path": ["api","kache","notificaciones","1",""] }
+          }
+        },
+        {
+          "name": "Reportar producto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"producto\": 1,\n  \"comercio\": 1,\n  \"motivo\": \"precio_incorrecto\",\n  \"comentario\": \"El precio real es $2.10, no $1.85\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/reportes/", "host": ["{{base_url}}"], "path": ["api","kache","reportes",""] }
+          }
+        },
+        {
+          "name": "Listar reseñas",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{base_url}}/api/kache/resenas/", "host": ["{{base_url}}"], "path": ["api","kache","resenas",""] }
+          }
+        },
+        {
+          "name": "Crear reseña",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"comercio\": 1,\n  \"calificacion\": 4,\n  \"comentario\": \"Buenos precios pero poca variedad\"\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/kache/resenas/", "host": ["{{base_url}}"], "path": ["api","kache","resenas",""] }
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "📧 Emails",
+      "item": [
+        {
+          "name": "Enviar notificación por correo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": { "mode": "raw", "raw": "{\n  \"subject\": \"Nueva oferta en Kache\",\n  \"message\": \"Hola! Hay nuevas ofertas disponibles en la app Kache. ¡Entra y revisa!\",\n  \"user_id\": null\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{base_url}}/api/emails/send/", "host": ["{{base_url}}"], "path": ["api","emails","send",""] }
+          }
+        }
+      ]
+    }
+
+  ]
+}

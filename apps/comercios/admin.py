@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Comercio, Sucursal
+from .models import Ciudad, Comercio, Sucursal
+
+
+@admin.register(Ciudad)
+class CiudadAdmin(admin.ModelAdmin):
+    list_display = ["id", "nombre", "provincia"]
+    list_filter = ["provincia"]
+    search_fields = ["nombre", "provincia"]
 
 
 @admin.register(Comercio)
@@ -12,5 +19,5 @@ class ComercioAdmin(admin.ModelAdmin):
 @admin.register(Sucursal)
 class SucursalAdmin(admin.ModelAdmin):
     list_display = ["id", "nombre_sucursal", "comercio", "ciudad", "activo"]
-    list_filter = ["comercio", "ciudad", "activo"]
-    search_fields = ["nombre_sucursal", "ciudad", "direccion"]
+    list_filter = ["comercio", "ciudad__provincia", "activo"]
+    search_fields = ["nombre_sucursal", "ciudad__nombre", "direccion"]

@@ -12,6 +12,7 @@ from django.conf import settings
 from django.db.models import Q
 from django.db import IntegrityError
 
+from .models import BusquedaReciente
 from .serializers import (
     LoginSerializer,
     RegisterSerializer,
@@ -19,6 +20,7 @@ from .serializers import (
     PasswordResetConfirmSerializer,
     UserSerializer,
     UserRequestSerializer,
+    BusquedaRecienteSerializer,
 )
 
 User = get_user_model()
@@ -242,3 +244,27 @@ def user_stats_view(request):
         "inactive": inactive,
         "staff": staff,
     })
+
+
+# ══════════════════════════════════════════════════════════════
+#  BÚSQUEDAS RECIENTES
+# ══════════════════════════════════════════════════════════════
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def busquedas_recientes_view(request):
+    if request.method == "GET":
+        busquedas = BusquedaReciente.objects.filter(usuario=request.user)[:20]
+        return Response(BusquedaRecienteSerializer(busquedas, many=True).data)
+
+    serializer = BusquedaRecienteSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save(usuario=request.user)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+@api_view(["DELETE"])
+@permission_classes([IsAuthenticated])
+def limpiar_busquedas_view(request):
+    BusquedaReciente.objects.filter(usuario=request.user).delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)

@@ -11,6 +11,8 @@ dependencies = [
     "django-filter>=24.3",
     "python-decouple>=3.8",
     "pillow>=10.4",
+    "psycopg2-binary>=2.9",
+    "playwright>=1.45",
 ]
 
 [tool.hatch.build.targets.wheel]

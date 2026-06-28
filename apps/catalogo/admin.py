@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib import messages
 from django.db import IntegrityError
 
-from .models import Categoria, Producto
+from .models import Marca, Etiqueta, Categoria, Producto
 
 
 @admin.action(description="Fusionar productos seleccionados en uno solo")
@@ -37,6 +37,18 @@ def fusionar_productos(modeladmin, request, queryset):
     )
 
 
+@admin.register(Marca)
+class MarcaAdmin(admin.ModelAdmin):
+    list_display = ["id", "nombre", "pais_origen", "sitio_web"]
+    search_fields = ["nombre", "pais_origen"]
+
+
+@admin.register(Etiqueta)
+class EtiquetaAdmin(admin.ModelAdmin):
+    list_display = ["id", "nombre", "descripcion"]
+    search_fields = ["nombre"]
+
+
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
     list_display = ["id", "nombre", "categoria_padre"]
@@ -46,8 +58,9 @@ class CategoriaAdmin(admin.ModelAdmin):
 @admin.register(Producto)
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ["id", "nombre", "marca", "categoria", "comercios_con_precio", "codigo_barras"]
-    list_filter = ["categoria"]
-    search_fields = ["nombre", "marca", "codigo_barras"]
+    list_filter = ["categoria", "marca"]
+    search_fields = ["nombre", "marca__nombre", "codigo_barras"]
+    filter_horizontal = ["etiquetas"]
     actions = [fusionar_productos]
 
     @admin.display(description="Comercios")

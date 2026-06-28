@@ -4,6 +4,8 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 
+from .models import BusquedaReciente
+
 User = get_user_model()
 
 
@@ -61,17 +63,12 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
 # ── Users CRUD ─────────────────────────────────────────────────
 
 class UserSerializer(serializers.ModelSerializer):
-    num_orders = serializers.SerializerMethodField()
-
     class Meta:
         model = User
         fields = [
             "id", "username", "email", "first_name", "last_name",
-            "is_staff", "is_active", "date_joined", "num_orders",
+            "is_staff", "is_active", "date_joined",
         ]
-
-    def get_num_orders(self, obj):
-        return obj.orders.count() if hasattr(obj, "orders") else 0
 
 
 class UserRequestSerializer(serializers.ModelSerializer):
@@ -109,3 +106,12 @@ class UserStatsSerializer(serializers.Serializer):
     active = serializers.IntegerField()
     inactive = serializers.IntegerField()
     staff = serializers.IntegerField()
+
+
+# ── BusquedaReciente ───────────────────────────────────────────
+
+class BusquedaRecienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BusquedaReciente
+        fields = ["id", "termino", "num_resultados", "fecha"]
+        read_only_fields = ["fecha"]
