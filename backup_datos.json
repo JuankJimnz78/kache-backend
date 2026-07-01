@@ -1,0 +1,4529 @@
+[
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "jti": "2a9a99d3dcce40ddb18fceb4abc0838e",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5Njg5MiwiaWF0IjoxNzgxNDkyMDkyLCJqdGkiOiIyYTlhOTlkM2RjY2U0MGRkYjE4ZmNlYjRhYmMwODM4ZSIsInVzZXJfaWQiOiIxIn0.nRsNVyizvO2LSjgQpkpH1zdeIRRm3EYRr-kKaPuutuY",
+    "created_at": "2026-06-15T02:54:52.426Z",
+    "expires_at": "2026-06-22T02:54:52Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "jti": "b9c255a778504833bffdf68d5145e26f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5NzE4NCwiaWF0IjoxNzgxNDkyMzg0LCJqdGkiOiJiOWMyNTVhNzc4NTA0ODMzYmZmZGY2OGQ1MTQ1ZTI2ZiIsInVzZXJfaWQiOiIyIn0.luK1lLA9InCsz9bHQmiTv4kcVvU05GgWeLrTmbxjbts",
+    "created_at": "2026-06-15T02:59:44.373Z",
+    "expires_at": "2026-06-22T02:59:44Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "jti": "87656f7891c541b08dfb839fdf7b9f85",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5NzIwOSwiaWF0IjoxNzgxNDkyNDA5LCJqdGkiOiI4NzY1NmY3ODkxYzU0MWIwOGRmYjgzOWZkZjdiOWY4NSIsInVzZXJfaWQiOiIxIn0.cyrjOTaOQKbDSvKjqan1mWBcV71gOZJHlxTUr2tZ6Ck",
+    "created_at": "2026-06-15T03:00:09.136Z",
+    "expires_at": "2026-06-22T03:00:09Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 4,
+  "fields": {
+    "user": 3,
+    "jti": "e09494f6769c4ecbbe958be5fe641b89",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5NzMxOSwiaWF0IjoxNzgxNDkyNTE5LCJqdGkiOiJlMDk0OTRmNjc2OWM0ZWNiYmU5NThiZTVmZTY0MWI4OSIsInVzZXJfaWQiOiIzIn0.8eRsPdjSD0_DAW_CvTMJ9-S-H906F29Yhrtipnio7tc",
+    "created_at": "2026-06-15T03:01:59.108Z",
+    "expires_at": "2026-06-22T03:01:59Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 5,
+  "fields": {
+    "user": 4,
+    "jti": "db15f98837274767b52d670590e6c806",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5NzM0MCwiaWF0IjoxNzgxNDkyNTQwLCJqdGkiOiJkYjE1Zjk4ODM3Mjc0NzY3YjUyZDY3MDU5MGU2YzgwNiIsInVzZXJfaWQiOiI0In0.wr_l7-2UPhqZkegDHQtk-rkqBt3_jA7KbZNu4r7Igfs",
+    "created_at": "2026-06-15T03:02:20.490Z",
+    "expires_at": "2026-06-22T03:02:20Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "jti": "d86dec8bbb9548f7b255a9fe33e73acc",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjA5NzM1MiwiaWF0IjoxNzgxNDkyNTUyLCJqdGkiOiJkODZkZWM4YmJiOTU0OGY3YjI1NWE5ZmUzM2U3M2FjYyIsInVzZXJfaWQiOiIxIn0.UWEVMEeFBkvyHqL9vd_-JrgGFMMeGfgb_a8XIprRjpw",
+    "created_at": "2026-06-15T03:02:32.175Z",
+    "expires_at": "2026-06-22T03:02:32Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "jti": "f960d6024abf4b19a6e4fd09750adbdd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjEyMDQ2NywiaWF0IjoxNzgxNTE1NjY3LCJqdGkiOiJmOTYwZDYwMjRhYmY0YjE5YTZlNGZkMDk3NTBhZGJkZCIsInVzZXJfaWQiOiI3In0.ddXjq2vHkFDGB9CxyErgnWWLbGCN-jkXl3KwpgsM0rQ",
+    "created_at": "2026-06-15T09:27:47.982Z",
+    "expires_at": "2026-06-22T09:27:47Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 8,
+  "fields": {
+    "user": 5,
+    "jti": "168a7bd8002b4372ba57947ba4ae7bb3",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjEyMDYzMiwiaWF0IjoxNzgxNTE1ODMyLCJqdGkiOiIxNjhhN2JkODAwMmI0MzcyYmE1Nzk0N2JhNGFlN2JiMyIsInVzZXJfaWQiOiI1In0.AIucDSCecvQLyvPE5slzG--ucK_1Yj2Wx7p0c1Tl2aA",
+    "created_at": "2026-06-15T09:30:32.480Z",
+    "expires_at": "2026-06-22T09:30:32Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 9,
+  "fields": {
+    "user": 5,
+    "jti": "1bb5b6dbf93848fca1305590729fd6cb",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjEyMDY5MCwiaWF0IjoxNzgxNTE1ODkwLCJqdGkiOiIxYmI1YjZkYmY5Mzg0OGZjYTEzMDU1OTA3MjlmZDZjYiIsInVzZXJfaWQiOiI1In0.GgM5s9O0iKsvRCxsxd-GSRq6mybtjwbN0iY6kfyZWIY",
+    "created_at": "2026-06-15T09:31:30.369Z",
+    "expires_at": "2026-06-22T09:31:30Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 10,
+  "fields": {
+    "user": 6,
+    "jti": "a39cfb4aa0674dcd893879d204383560",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjkxMjY4NywiaWF0IjoxNzgyMzA3ODg3LCJqdGkiOiJhMzljZmI0YWEwNjc0ZGNkODkzODc5ZDIwNDM4MzU2MCIsInVzZXJfaWQiOiI2In0.eHhhtSjRrT4teRAEUJvQkrPP5uf4u7vH0AihkisUg5c",
+    "created_at": "2026-06-24T13:31:27.170Z",
+    "expires_at": "2026-07-01T13:31:27Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 11,
+  "fields": {
+    "user": 6,
+    "jti": "9dea8c18d4784a77acd0187b629dcfa4",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MjkxMzYyOSwiaWF0IjoxNzgyMzA4ODI5LCJqdGkiOiI5ZGVhOGMxOGQ0Nzg0YTc3YWNkMDE4N2I2MjlkY2ZhNCIsInVzZXJfaWQiOiI2In0.bpDJ6gTlrpCLEfMX8G_xfr0C9M91xJDvV4KLH-CtxYc",
+    "created_at": "2026-06-24T13:47:09.856Z",
+    "expires_at": "2026-07-01T13:47:09Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 12,
+  "fields": {
+    "user": 6,
+    "jti": "9cc037eebfdc426f87b82e62a7b4c54b",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzAxMTk0OCwiaWF0IjoxNzgyNDA3MTQ4LCJqdGkiOiI5Y2MwMzdlZWJmZGM0MjZmODdiODJlNjJhN2I0YzU0YiIsInVzZXJfaWQiOiI2In0.t2NHXOECxpRo1vr98b4dG5cKweFu8Kgiv0L1vD3Vkok",
+    "created_at": "2026-06-25T17:05:48.282Z",
+    "expires_at": "2026-07-02T17:05:48Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 13,
+  "fields": {
+    "user": 6,
+    "jti": "feab70459fab4391a591e47f091a3668",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzAxNDQ4MSwiaWF0IjoxNzgyNDA5NjgxLCJqdGkiOiJmZWFiNzA0NTlmYWI0MzkxYTU5MWU0N2YwOTFhMzY2OCIsInVzZXJfaWQiOiI2In0.keAKihcnkx47CGW_stzxvCMAYnuCrDCTEnb4YcYNo5E",
+    "created_at": "2026-06-25T17:48:01.891Z",
+    "expires_at": "2026-07-02T17:48:01Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 14,
+  "fields": {
+    "user": 6,
+    "jti": "4a59ef3f6e474700ba925d5e4b7e0ef7",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzEyMDMxMSwiaWF0IjoxNzgyNTE1NTExLCJqdGkiOiI0YTU5ZWYzZjZlNDc0NzAwYmE5MjVkNWU0YjdlMGVmNyIsInVzZXJfaWQiOiI2In0.MBTF0L9FmXvOrNBnMHizi5N0XpBjHpZfsRFI_HEjoHc",
+    "created_at": "2026-06-26T23:11:51.620Z",
+    "expires_at": "2026-07-03T23:11:51Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 15,
+  "fields": {
+    "user": null,
+    "jti": "d9543775a32e4de3b21a27312abbb3e5",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzEyMTc2MSwiaWF0IjoxNzgyNTE2OTYxLCJqdGkiOiJkOTU0Mzc3NWEzMmU0ZGUzYjIxYTI3MzEyYWJiYjNlNSIsInVzZXJfaWQiOiI4In0.Cqoia_akxyRsIXEtArGV4ygmFgFwjEMrwgdb6fUTHDo",
+    "created_at": "2026-06-26T23:36:01.616Z",
+    "expires_at": "2026-07-03T23:36:01Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 16,
+  "fields": {
+    "user": 9,
+    "jti": "de3fa4e6c68b4b5294311b4f84095b82",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzEyNDk1MSwiaWF0IjoxNzgyNTIwMTUxLCJqdGkiOiJkZTNmYTRlNmM2OGI0YjUyOTQzMTFiNGY4NDA5NWI4MiIsInVzZXJfaWQiOiI5In0.AalYr9oYsvGO0CYPMq2H8Va3YWDUs79XgG_7Buc83xc",
+    "created_at": "2026-06-27T00:29:11.016Z",
+    "expires_at": "2026-07-04T00:29:11Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 17,
+  "fields": {
+    "user": 9,
+    "jti": "d134eb53b68f49cdb604c3f559f0ba5d",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc4MzEyNTAyMiwiaWF0IjoxNzgyNTIwMjIyLCJqdGkiOiJkMTM0ZWI1M2I2OGY0OWNkYjYwNGMzZjU1OWYwYmE1ZCIsInVzZXJfaWQiOiI5In0.Pf0pFg7483fYNEUGNbG5liXrNuAtxA9SOlQKZkYSwoI",
+    "created_at": "2026-06-27T00:30:22.996Z",
+    "expires_at": "2026-07-04T00:30:22Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 1,
+  "fields": {
+    "token": 1,
+    "blacklisted_at": "2026-06-15T02:58:51.259Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 2,
+  "fields": {
+    "token": 2,
+    "blacklisted_at": "2026-06-15T02:59:51.271Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 3,
+  "fields": {
+    "token": 3,
+    "blacklisted_at": "2026-06-15T03:00:49.555Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 4,
+  "fields": {
+    "token": 4,
+    "blacklisted_at": "2026-06-15T03:02:02.413Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 5,
+  "fields": {
+    "token": 5,
+    "blacklisted_at": "2026-06-15T03:02:23.775Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 6,
+  "fields": {
+    "token": 7,
+    "blacklisted_at": "2026-06-15T09:29:48.190Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 7,
+  "fields": {
+    "token": 8,
+    "blacklisted_at": "2026-06-15T09:30:38.350Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 8,
+  "fields": {
+    "token": 9,
+    "blacklisted_at": "2026-06-15T09:34:43.708Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 9,
+  "fields": {
+    "token": 14,
+    "blacklisted_at": "2026-06-26T23:13:38.660Z"
+  }
+},
+{
+  "model": "token_blacklist.blacklistedtoken",
+  "pk": 10,
+  "fields": {
+    "token": 16,
+    "blacklisted_at": "2026-06-27T00:30:02.031Z"
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$grGoqmc6Hmpt9UsrxgE5wh$XIFME3TJxW42PKpwhVGtnBlUBYPpkyQR9ips3S+kycA=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-15T02:51:26.234Z",
+    "email": "admin@admin.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$tQRCthF1mZceCWBSpLIivV$1IP7E7t1Z5LzDL55yp22fcUmX+4c1JwqSS6r0o07v5g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "marcos",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-15T02:59:43.842Z",
+    "email": "paocm657@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$pnGbKrZ0vdSlIEM0SLnAQy$2y9iIkh3rfUubuAfjX/1q/LzmDpAEltIxsg6lp2C5O4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "juanka",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-15T03:01:58.551Z",
+    "email": "juankjimnz78@gmail.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$emvc06vJaNdadU5VnCBYAp$tuD5xMXdx3dt6gg+gsyziR+ZUwh16vHfmtIFXqaOgrM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "juanka2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-15T03:02:19.966Z",
+    "email": "jendara@elsauce.edu.ec",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$EIEbja4sDTdqthyTPcFYHO$DiS+4L7YuL+Kd7O+FSStk/E9mcQPga11rZAPA8hgvf4=",
+    "last_login": "2026-06-27T22:47:10.521Z",
+    "is_superuser": true,
+    "username": "juanca",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-15T07:06:00.146Z",
+    "email": "juanca@juanca.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$INJaVT2mH69ioUgmJlPTf7$SHPT/ZZZW+DP9H4mr2odwxQKIdLa2X9riaQ8NYn69cc=",
+    "last_login": "2026-06-25T01:27:48.699Z",
+    "is_superuser": true,
+    "username": "juan",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-15T09:18:49.645Z",
+    "email": "juan@juan.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oqFS8KLQ3nse8PGOV6s0tW$PatGcayVuAlYMZG7vgABpDAR9kCctMB5T6pzQdOp23E=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "carlos",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-15T09:22:11.771Z",
+    "email": "carlos@carlos.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$q9kUWQVgqoum8iOqKsrIaH$bZIhJAEPtGpRZjEHkV97ZFfk5w8ANF4SsU3OW/m8KJw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "joha",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-27T00:29:10.332Z",
+    "email": "joha@joha.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "name": "Electrónica",
+    "slug": "electronica",
+    "description": "Inalambrico",
+    "is_active": true,
+    "created_at": "2026-06-15T09:32:48.503Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Cargador",
+    "description": "Carga rapida",
+    "price": "25.00",
+    "stock": 15,
+    "is_active": true,
+    "image": "",
+    "category": 1,
+    "created_at": "2026-06-15T09:33:56.708Z",
+    "updated_at": "2026-06-15T09:33:56.708Z"
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 1,
+  "fields": {
+    "nombre": "Ofertas",
+    "descripcion": "",
+    "categoria_padre": null
+  }
+},
+{
+  "model": "catalogo.categoria",
+  "pk": 2,
+  "fields": {
+    "nombre": "Leches",
+    "descripcion": "",
+    "categoria_padre": null
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 1,
+  "fields": {
+    "nombre": "Salsa De Tomate Básica MAGGI 1000 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.641Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 2,
+  "fields": {
+    "nombre": "Chocolate Regionales Del Ecuador Gift Box PACCARI 200g",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.652Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 3,
+  "fields": {
+    "nombre": "Desodorante En Aerosol Antitranspirante Para Mujer Tono Perfecto REXONA 150 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.663Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 4,
+  "fields": {
+    "nombre": "Granola Crocante NATURE´S HEART 340 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.674Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 5,
+  "fields": {
+    "nombre": "Lasagna Precocida TOSCANA 400 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.683Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 6,
+  "fields": {
+    "nombre": "Adobo Completo Sabor A Limón MAGGI LA SAZÓN 185 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.694Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 7,
+  "fields": {
+    "nombre": "Detergente En Polvo Lavado Perfecto Limón + Bicarbonato DEJA 2 Kg",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.704Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 8,
+  "fields": {
+    "nombre": "Alimento Para Gatos Adultos Esterilizados Sabor A Res WHISKAS 150 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.730Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 9,
+  "fields": {
+    "nombre": "Pastelitos Para Tostar Strawberry POP TARTS 8 Uds De 48 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.740Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 10,
+  "fields": {
+    "nombre": "Pasta Dental Blanqueadora Luminous White Brilliant COLGATE 75 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.750Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 11,
+  "fields": {
+    "nombre": "Bocaditos De Maiz Sabor A Limon DORITOS 145 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.761Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 12,
+  "fields": {
+    "nombre": "Bi-difusor Ambiental Fragancia Sweet Emotions LULË AROMË 30 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.770Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 13,
+  "fields": {
+    "nombre": "Jabón Íntimo Con Vinagre Manzana NOSOTRAS 200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.798Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 14,
+  "fields": {
+    "nombre": "Leche Descremada Larga Vida TONI Tetrapak",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.808Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 15,
+  "fields": {
+    "nombre": "Café Instantáneo Gold NESCAFÉ 160 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.818Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 16,
+  "fields": {
+    "nombre": "Espuma De Afeitar Mentolada SUPERMAXI 320 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-22T13:11:18.828Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 17,
+  "fields": {
+    "nombre": "3PACK BEBIDA SEMILLAS ALM VAINILLA1LT",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.512Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 18,
+  "fields": {
+    "nombre": "6 PACK LECHE ENTERA ANDILAC UHT",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.523Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 19,
+  "fields": {
+    "nombre": "6 PACK LECHE SEMIDESCREMADA CORAL UHT",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.532Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 20,
+  "fields": {
+    "nombre": "BEBIDA 3 NUECES SIN AZUCAR TRU 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.559Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 21,
+  "fields": {
+    "nombre": "BEBIDA ALMENDRA SIN AZUCAR TETRAPAK AGRO",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.569Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 22,
+  "fields": {
+    "nombre": "BEBIDA CON CREMA DE LECHE LENUTRIT 900ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.580Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 23,
+  "fields": {
+    "nombre": "Bebida De Almendra Chocolate Silk 190Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.590Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 24,
+  "fields": {
+    "nombre": "Bebida De Almendra Chocolate Silk 946Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.600Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 25,
+  "fields": {
+    "nombre": "Bebida De Almendra Natural Agrodely 1000",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.641Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 26,
+  "fields": {
+    "nombre": "BEBIDA DE ALMENDRA NATURAL X3 100ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.654Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 27,
+  "fields": {
+    "nombre": "Bebida De Almendra S/Azucar Silk 946X3",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.666Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 28,
+  "fields": {
+    "nombre": "BEBIDA DE ALMENDRA SABOR CHOCOLATE 200ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-22T18:06:49.677Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 29,
+  "fields": {
+    "nombre": "Mix Frutos Secos Frutas Y Chocolates NATURE’S HEART 120 g",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.309Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 30,
+  "fields": {
+    "nombre": "Whisky Rojo Botella JOHNNIE WALKER 750 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.323Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 31,
+  "fields": {
+    "nombre": "Ajo Granulado NATURE’S HEART 75 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.332Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 32,
+  "fields": {
+    "nombre": "Vinagre De Manzana CONDIMENSA 450 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.341Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 33,
+  "fields": {
+    "nombre": "Sazonador De Carnes Blancas CONDIMENSA Funda",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.349Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 34,
+  "fields": {
+    "nombre": "Crema Corporal Soft Milk Piel Seca NIVEA 1000 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.359Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 35,
+  "fields": {
+    "nombre": "Fideo Cabello Precortado TOSCANA 250 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.368Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 36,
+  "fields": {
+    "nombre": "Bebida De Almendras 3Pack Heart NATURE’S HEART 3 X 946 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.379Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 37,
+  "fields": {
+    "nombre": "Salsa Pesto Alla Genovese BARILLA Frasco",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.389Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 38,
+  "fields": {
+    "nombre": "Patatas En Tubo Crema Y Cebolla PRINGLES 124 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.399Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 39,
+  "fields": {
+    "nombre": "Linaza Natural CONDIMENSA 100 g",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.410Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 40,
+  "fields": {
+    "nombre": "Infusión De Valeriana Y Jamaica NATURE’S HEART 30 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.426Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 41,
+  "fields": {
+    "nombre": "Bebida De Avena Sabor Canela TONI 1000 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.434Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 42,
+  "fields": {
+    "nombre": "Bebida De Almendras Sin Azúcar TONI 1000 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.444Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 43,
+  "fields": {
+    "nombre": "Frutos Secos Mix Antioxidante NATURE’S HEART 35 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.452Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 44,
+  "fields": {
+    "nombre": "Fideo Fusilli Tricolore TOSCANA 400 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.462Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 45,
+  "fields": {
+    "nombre": "Caldo De Gallina En Cubo MAGGI 120 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.472Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 46,
+  "fields": {
+    "nombre": "Chorizo Paisa PLUMROSE 400 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.481Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 47,
+  "fields": {
+    "nombre": "Bicarbonato En Polvo CONDIMENSA DoyPack",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.492Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 48,
+  "fields": {
+    "nombre": "Bebida Hidratante Sabor A Blueberry Pet SPORADE 1200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.500Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 49,
+  "fields": {
+    "nombre": "Tortillas De Harina De Trigo MAMA FANY 250 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.511Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 50,
+  "fields": {
+    "nombre": "Desodorante En Barra Natural Sin Aluminio Refreshing Verbena LULË CARË 50 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.520Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 51,
+  "fields": {
+    "nombre": "Desodorante En Barra Para Dama Tono Perfecto REXONA 45 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.530Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 52,
+  "fields": {
+    "nombre": "Desodorante En Gel Specialized Antibacterial GILLETTE 82 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 1,
+    "creado_en": "2026-06-27T22:20:15.540Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 53,
+  "fields": {
+    "nombre": "Bebida De Yogurt Sabor A Mora YOGU YOGU 1 L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.550Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 54,
+  "fields": {
+    "nombre": "Leche En Polvo Fortificada EL ARTESANAL 400 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.561Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 55,
+  "fields": {
+    "nombre": "Leche En Polvo Fortificada Con Vitaminas SUPERMAXI 400 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.572Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 56,
+  "fields": {
+    "nombre": "Leche Entera Larga Vida TRÜ 200 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.583Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 57,
+  "fields": {
+    "nombre": "Kéfir Kids Bebida Probiótica Mora EN VIDA 200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.594Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 58,
+  "fields": {
+    "nombre": "Leche Saborizada Semidescremada Sabor Vainilla LA VAQUITA 1 L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.604Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 59,
+  "fields": {
+    "nombre": "Kéfir Entero Sabor Mora Y Arándanos CHIVERIA 950 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.613Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 60,
+  "fields": {
+    "nombre": "Kéfir Frambuesa Activida DULACS 200 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.623Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 61,
+  "fields": {
+    "nombre": "Kéfir Kids Bebida Probiótica Mango Maracuyá EN VIDA 200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.632Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 62,
+  "fields": {
+    "nombre": "Kéfir Entero Sabor Vainilla CHIVERIA 200 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.641Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 63,
+  "fields": {
+    "nombre": "Kéfir Entero Natural CHIVERIA 950 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.650Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 64,
+  "fields": {
+    "nombre": "Leche Semidescremada Larga Vida Uht TRÜ 6 Pack X 200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.661Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 65,
+  "fields": {
+    "nombre": "Kéfir Entero Natural CHIVERIA 200 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.671Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 66,
+  "fields": {
+    "nombre": "Kéfir Entero Sabor Vainilla CHIVERIA 950 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.679Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 67,
+  "fields": {
+    "nombre": "Kéfir Entero Sabor Mora Y Arándanos CHIVERIA 200 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.688Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 68,
+  "fields": {
+    "nombre": "Kéfir Miel De Abeja Activida DULACS 200 G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.698Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 69,
+  "fields": {
+    "nombre": "Leche Semidescremada Deslactosada En Funda MIRAFLORES 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.709Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 70,
+  "fields": {
+    "nombre": "Leche Descremada Deslactosada En Funda MIRAFLORES 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.720Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 71,
+  "fields": {
+    "nombre": "Leche Descremada En Funda MIRAFLORES 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.729Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 72,
+  "fields": {
+    "nombre": "Leche Semidescremada Ultrapasteurizada PARMALAT 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.739Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 73,
+  "fields": {
+    "nombre": "Leche Semidescremada Ultrapasteurizada PARMALAT 6 X 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.747Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 74,
+  "fields": {
+    "nombre": "Bebida De Leche Sabor A Frutilla YOGU YOGU 200 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.756Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 75,
+  "fields": {
+    "nombre": "Leche Entera Ultrapasteurizada PARMALAT 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.767Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 76,
+  "fields": {
+    "nombre": "Leche Entera Ultrapasteurizada PARMALAT 6 X 900 Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:20:15.777Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 77,
+  "fields": {
+    "nombre": "Kéfir Naranjilla Botella ZEUS 900 G",
+    "marca": "",
+    "codigo_barras": "7861138614605",
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:37:46.367Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 78,
+  "fields": {
+    "nombre": "Kéfir Arándano Botella ZEUS 190 G",
+    "marca": "",
+    "codigo_barras": "7861138614599",
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:37:46.381Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 79,
+  "fields": {
+    "nombre": "Kéfir Naranjilla Botella ZEUS 190 G",
+    "marca": "",
+    "codigo_barras": "7861138614612",
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:37:46.393Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 80,
+  "fields": {
+    "nombre": "Kéfir Natural Botella ZEUS 190 G",
+    "marca": "",
+    "codigo_barras": "7861138614551",
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:37:46.406Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 81,
+  "fields": {
+    "nombre": "Bebida De Almendra Silk 946Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.875Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 82,
+  "fields": {
+    "nombre": "Bebida De Almendra Sin Azucar Silk 946Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.885Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 83,
+  "fields": {
+    "nombre": "BEBIDA DE ALMENDRA UHT 1000ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.895Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 84,
+  "fields": {
+    "nombre": "Bebida De Almendra Vainill Agrodely 1000",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.905Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 85,
+  "fields": {
+    "nombre": "Bebida De Almendra Vainilla Silk 946Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.915Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 86,
+  "fields": {
+    "nombre": "Bebida De Almendra Vainilla Sin Azucar S",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.924Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 87,
+  "fields": {
+    "nombre": "BEBIDA DE ALMENDRA VIVE SOY 1000ML-3",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.933Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 88,
+  "fields": {
+    "nombre": "BEBIDA DE AMARANTO MORA Y FRESA GRAMONIL",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.943Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 89,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE CON CAFE CAFFE LATO TONI",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.952Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 90,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE DURAZNO YOGU YOGU NESTLE",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.961Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 91,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE FRUTILLA YOGU YOGU NESTL",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.969Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 92,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE MANZANA YOGU YOGU NESTLE",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.978Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 93,
+  "fields": {
+    "nombre": "Bebida De Leche Mora Yogu Yogu Nestle 20",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.986Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 94,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE YOGU YOGU MORA NESTLE 75",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:47.995Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 95,
+  "fields": {
+    "nombre": "BEBIDA DE LECHE YOGU YOGU NESTLE 6UD 200",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.004Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 96,
+  "fields": {
+    "nombre": "BEBIDA DE SOJA BRICK 1000ML-1",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.013Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 97,
+  "fields": {
+    "nombre": "Bebida De Soja Con Vainilla 1000Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.021Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 98,
+  "fields": {
+    "nombre": "BEBIDA DE SOYA 900 ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.030Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 99,
+  "fields": {
+    "nombre": "BEBIDA DE SOYA ORG NATURES HEART 946ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.038Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 100,
+  "fields": {
+    "nombre": "Bebida De Soya Solmik'S 250G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.047Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 101,
+  "fields": {
+    "nombre": "BEBIDA LACTEA NATURAL KEIF 300ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.056Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 102,
+  "fields": {
+    "nombre": "Café + Leche Semi Cappuccino Vita 200 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.066Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 103,
+  "fields": {
+    "nombre": "Café + Leche Semi Mocaccino Vita 200 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.075Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 104,
+  "fields": {
+    "nombre": "DUO PACK LECHE CHOCOLATADA TPK 1 LT",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.084Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 105,
+  "fields": {
+    "nombre": "Fruty Leche Tony 200Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.094Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 106,
+  "fields": {
+    "nombre": "La Lechera Leche Smdescr 6X1L Pr Pre Ec",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.102Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 107,
+  "fields": {
+    "nombre": "La Lechera Semidescremada 12x1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.111Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 108,
+  "fields": {
+    "nombre": "Le Semidescremada En Funda Andina 6Pack",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.121Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 109,
+  "fields": {
+    "nombre": "Leche Bebida De Arroz Lenutrit 900Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.130Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 110,
+  "fields": {
+    "nombre": "Leche Chocolatada De Parmalat 900G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.139Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 111,
+  "fields": {
+    "nombre": "Leche Chocolatada La Lechera 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.150Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 112,
+  "fields": {
+    "nombre": "Leche Chocolatada Toni 1 Litro",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.161Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 113,
+  "fields": {
+    "nombre": "Leche Chocolatada Toni 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.172Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 114,
+  "fields": {
+    "nombre": "Leche Chocolatada Toni 200 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.183Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 115,
+  "fields": {
+    "nombre": "Leche Chocolatada Toni Prisma 200Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.194Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 116,
+  "fields": {
+    "nombre": "Leche Chocolatada Toni Six Pack 6X200Ml.",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.205Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 117,
+  "fields": {
+    "nombre": "LECHE CHOCOLATE DESLACT TRU 200ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.216Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 118,
+  "fields": {
+    "nombre": "Leche Chocolate Pack 12X200Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.227Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 119,
+  "fields": {
+    "nombre": "Leche de Almendras Nature's Heart Sin Azúcar",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.237Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 120,
+  "fields": {
+    "nombre": "Leche de Almendras sin Azúcar Silk | 946ml Alta Proteína",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.247Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 121,
+  "fields": {
+    "nombre": "Leche De Coco En Polvo Spezia 50G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.256Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 122,
+  "fields": {
+    "nombre": "Leche De Coco Goya 13.5Oz 400Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.265Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 123,
+  "fields": {
+    "nombre": "Leche De Coco Premium Lata 400Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.277Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 124,
+  "fields": {
+    "nombre": "Leche De Soya Natural Solmik'S 250G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.286Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 125,
+  "fields": {
+    "nombre": "Leche Descremada 3Pack Square Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.297Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 126,
+  "fields": {
+    "nombre": "Leche Descremada Carton Con Tapa Vita 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.306Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 127,
+  "fields": {
+    "nombre": "Leche Descremada En Funda 6Pack Andina 9",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.315Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 128,
+  "fields": {
+    "nombre": "Leche Descremada Flexicap Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.324Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 129,
+  "fields": {
+    "nombre": "Leche Descremada Funda Tetrafino Nutri",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.333Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 130,
+  "fields": {
+    "nombre": "Leche Descremada La Lechera 946Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.341Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 131,
+  "fields": {
+    "nombre": "Leche Descremada Pack X3 La Lechera 946M",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.351Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 132,
+  "fields": {
+    "nombre": "Leche Descremada Prisma Toni 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.361Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 133,
+  "fields": {
+    "nombre": "Leche Descremada Tetrafino Reyleche 900M",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.371Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 134,
+  "fields": {
+    "nombre": "Leche Descremada Tru 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.381Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 135,
+  "fields": {
+    "nombre": "Leche Descremada Uht Square Nutri 500Ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.389Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 136,
+  "fields": {
+    "nombre": "Leche Deslactosada 3Pack La Lechera 946M",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.399Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 137,
+  "fields": {
+    "nombre": "Leche Deslactosada Carton Con Tapa Vita",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.408Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 138,
+  "fields": {
+    "nombre": "Leche Deslactosada en Funda 900 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.417Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 139,
+  "fields": {
+    "nombre": "Leche Deslactosada Four Pack Toni 1L C/U",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.426Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 140,
+  "fields": {
+    "nombre": "Leche Deslactosada La Lechera 946 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.435Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 141,
+  "fields": {
+    "nombre": "Leche Deslactosada Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.444Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 142,
+  "fields": {
+    "nombre": "Leche Deslactosada Nutri 3pack Square 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.453Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 143,
+  "fields": {
+    "nombre": "Leche Deslactosada Nutri Square 500 ml",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.462Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 144,
+  "fields": {
+    "nombre": "Leche Deslactosada Tetrafino Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.471Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 145,
+  "fields": {
+    "nombre": "Leche Deslactosada Toni Prisma 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.480Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 146,
+  "fields": {
+    "nombre": "LECHE DESLACTOSADA UHT ALTA PROTEINA TRU/2",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.489Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 147,
+  "fields": {
+    "nombre": "LECHE DESLACTOSADA UHT EN CARTON EL ORDE",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.498Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 148,
+  "fields": {
+    "nombre": "Leche deslactosada Zymil Parmalat 1 Litro",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.507Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 149,
+  "fields": {
+    "nombre": "Leche En Polvo El Ordeno 200G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.517Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 150,
+  "fields": {
+    "nombre": "Leche En Polvo El Ordeno 400G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.526Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 151,
+  "fields": {
+    "nombre": "LECHE EN POLVO ENTERA FORTIFICADA NUTRI",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.535Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 152,
+  "fields": {
+    "nombre": "Leche En Polvo Modificada El Ordeno 900G",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.559Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 153,
+  "fields": {
+    "nombre": "Leche en Polvo Nestlé La Vaquita | 1Kg",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.568Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 154,
+  "fields": {
+    "nombre": "Leche en Polvo Nestle la Vaquita | Deslactosada 400g",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.576Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 155,
+  "fields": {
+    "nombre": "Leche Ent Ultrapasteurizada Pura Crema 9",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.585Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 156,
+  "fields": {
+    "nombre": "Leche Entera 4Pack Square Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.595Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 157,
+  "fields": {
+    "nombre": "LECHE ENTERA ANDILAC UHT 900ML",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.604Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 158,
+  "fields": {
+    "nombre": "Leche Entera Chocolatada Uht Andina 900M",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.613Z"
+  }
+},
+{
+  "model": "catalogo.producto",
+  "pk": 159,
+  "fields": {
+    "nombre": "Leche Entera Flexicap Nutri 1L",
+    "marca": "",
+    "codigo_barras": null,
+    "descripcion": "",
+    "unidad_medida": "unidad",
+    "categoria": 2,
+    "creado_en": "2026-06-27T22:59:48.623Z"
+  }
+},
+{
+  "model": "comercios.comercio",
+  "pk": 1,
+  "fields": {
+    "nombre": "Supermaxi",
+    "tipo": "supermercado",
+    "logo_url": null,
+    "sitio_web": "https://www.supermaxi.com",
+    "activo": true,
+    "destacado": false,
+    "fecha_fin_destacado": null
+  }
+},
+{
+  "model": "comercios.comercio",
+  "pk": 2,
+  "fields": {
+    "nombre": "Coral",
+    "tipo": "supermercado",
+    "logo_url": null,
+    "sitio_web": "https://coralhipermercados.com/",
+    "activo": true,
+    "destacado": false,
+    "fecha_fin_destacado": null
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 1,
+  "fields": {
+    "producto": 1,
+    "comercio": 1,
+    "precio_actual": "3.92",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.647Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 2,
+  "fields": {
+    "producto": 2,
+    "comercio": 1,
+    "precio_actual": "14.77",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.658Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 3,
+  "fields": {
+    "producto": 3,
+    "comercio": 1,
+    "precio_actual": "3.48",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.668Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 4,
+  "fields": {
+    "producto": 4,
+    "comercio": 1,
+    "precio_actual": "1.58",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.678Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 5,
+  "fields": {
+    "producto": 5,
+    "comercio": 1,
+    "precio_actual": "4.50",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.689Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 6,
+  "fields": {
+    "producto": 6,
+    "comercio": 1,
+    "precio_actual": "0.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.699Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 7,
+  "fields": {
+    "producto": 7,
+    "comercio": 1,
+    "precio_actual": "6.66",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.725Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 8,
+  "fields": {
+    "producto": 8,
+    "comercio": 1,
+    "precio_actual": "7.64",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.735Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 9,
+  "fields": {
+    "producto": 9,
+    "comercio": 1,
+    "precio_actual": "2.95",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.746Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 10,
+  "fields": {
+    "producto": 10,
+    "comercio": 1,
+    "precio_actual": "4.12",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.756Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 11,
+  "fields": {
+    "producto": 11,
+    "comercio": 1,
+    "precio_actual": "1.62",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.765Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 12,
+  "fields": {
+    "producto": 12,
+    "comercio": 1,
+    "precio_actual": "4.37",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.793Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 13,
+  "fields": {
+    "producto": 13,
+    "comercio": 1,
+    "precio_actual": "6.67",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.803Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 14,
+  "fields": {
+    "producto": 14,
+    "comercio": 1,
+    "precio_actual": "1.35",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.813Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 15,
+  "fields": {
+    "producto": 15,
+    "comercio": 1,
+    "precio_actual": "7.19",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.823Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 16,
+  "fields": {
+    "producto": 16,
+    "comercio": 1,
+    "precio_actual": "4.95",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T13:11:18.832Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 17,
+  "fields": {
+    "producto": 17,
+    "comercio": 2,
+    "precio_actual": "11.11",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.612Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 18,
+  "fields": {
+    "producto": 18,
+    "comercio": 2,
+    "precio_actual": "4.81",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T18:06:49.527Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 19,
+  "fields": {
+    "producto": 19,
+    "comercio": 2,
+    "precio_actual": "4.37",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T18:06:49.554Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 20,
+  "fields": {
+    "producto": 20,
+    "comercio": 2,
+    "precio_actual": "2.24",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.619Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 21,
+  "fields": {
+    "producto": 21,
+    "comercio": 2,
+    "precio_actual": "2.52",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.625Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 22,
+  "fields": {
+    "producto": 22,
+    "comercio": 2,
+    "precio_actual": "0.71",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T18:06:49.585Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 23,
+  "fields": {
+    "producto": 23,
+    "comercio": 2,
+    "precio_actual": "1.07",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.631Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 24,
+  "fields": {
+    "producto": 24,
+    "comercio": 2,
+    "precio_actual": "3.94",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.637Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 25,
+  "fields": {
+    "producto": 25,
+    "comercio": 2,
+    "precio_actual": "2.61",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.642Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 26,
+  "fields": {
+    "producto": 26,
+    "comercio": 2,
+    "precio_actual": "7.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-22T18:06:49.660Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 27,
+  "fields": {
+    "producto": 27,
+    "comercio": 2,
+    "precio_actual": "9.56",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.646Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 28,
+  "fields": {
+    "producto": 28,
+    "comercio": 2,
+    "precio_actual": "0.76",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.651Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 29,
+  "fields": {
+    "producto": 29,
+    "comercio": 1,
+    "precio_actual": "2.59",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.104Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 30,
+  "fields": {
+    "producto": 30,
+    "comercio": 1,
+    "precio_actual": "19.50",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.110Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 31,
+  "fields": {
+    "producto": 31,
+    "comercio": 1,
+    "precio_actual": "3.77",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.115Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 32,
+  "fields": {
+    "producto": 32,
+    "comercio": 1,
+    "precio_actual": "1.16",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.120Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 33,
+  "fields": {
+    "producto": 33,
+    "comercio": 1,
+    "precio_actual": "0.48",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.125Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 34,
+  "fields": {
+    "producto": 34,
+    "comercio": 1,
+    "precio_actual": "12.49",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.130Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 35,
+  "fields": {
+    "producto": 35,
+    "comercio": 1,
+    "precio_actual": "1.04",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.135Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 36,
+  "fields": {
+    "producto": 36,
+    "comercio": 1,
+    "precio_actual": "7.66",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.140Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 37,
+  "fields": {
+    "producto": 37,
+    "comercio": 1,
+    "precio_actual": "4.09",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.146Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 38,
+  "fields": {
+    "producto": 38,
+    "comercio": 1,
+    "precio_actual": "3.75",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.151Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 39,
+  "fields": {
+    "producto": 39,
+    "comercio": 1,
+    "precio_actual": "0.51",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.156Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 40,
+  "fields": {
+    "producto": 40,
+    "comercio": 1,
+    "precio_actual": "1.58",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.161Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 41,
+  "fields": {
+    "producto": 41,
+    "comercio": 1,
+    "precio_actual": "2.38",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.166Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 42,
+  "fields": {
+    "producto": 42,
+    "comercio": 1,
+    "precio_actual": "2.97",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.171Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 43,
+  "fields": {
+    "producto": 43,
+    "comercio": 1,
+    "precio_actual": "0.71",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.176Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 44,
+  "fields": {
+    "producto": 44,
+    "comercio": 1,
+    "precio_actual": "1.52",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.181Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 45,
+  "fields": {
+    "producto": 45,
+    "comercio": 1,
+    "precio_actual": "1.88",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.186Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 46,
+  "fields": {
+    "producto": 46,
+    "comercio": 1,
+    "precio_actual": "2.95",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.191Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 47,
+  "fields": {
+    "producto": 47,
+    "comercio": 1,
+    "precio_actual": "1.38",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.196Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 48,
+  "fields": {
+    "producto": 48,
+    "comercio": 1,
+    "precio_actual": "0.75",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.201Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 49,
+  "fields": {
+    "producto": 49,
+    "comercio": 1,
+    "precio_actual": "1.69",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.206Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 50,
+  "fields": {
+    "producto": 50,
+    "comercio": 1,
+    "precio_actual": "6.15",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.211Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 51,
+  "fields": {
+    "producto": 51,
+    "comercio": 1,
+    "precio_actual": "3.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.216Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 52,
+  "fields": {
+    "producto": 52,
+    "comercio": 1,
+    "precio_actual": "5.74",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.221Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 53,
+  "fields": {
+    "producto": 53,
+    "comercio": 1,
+    "precio_actual": "2.46",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.226Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 54,
+  "fields": {
+    "producto": 54,
+    "comercio": 1,
+    "precio_actual": "2.54",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.231Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 55,
+  "fields": {
+    "producto": 55,
+    "comercio": 1,
+    "precio_actual": "3.45",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.235Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 56,
+  "fields": {
+    "producto": 56,
+    "comercio": 1,
+    "precio_actual": "0.40",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.240Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 57,
+  "fields": {
+    "producto": 57,
+    "comercio": 1,
+    "precio_actual": "1.04",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.244Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 58,
+  "fields": {
+    "producto": 58,
+    "comercio": 1,
+    "precio_actual": "2.47",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.253Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 59,
+  "fields": {
+    "producto": 59,
+    "comercio": 1,
+    "precio_actual": "4.19",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.259Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 60,
+  "fields": {
+    "producto": 60,
+    "comercio": 1,
+    "precio_actual": "1.17",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.265Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 61,
+  "fields": {
+    "producto": 61,
+    "comercio": 1,
+    "precio_actual": "1.04",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.272Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 62,
+  "fields": {
+    "producto": 62,
+    "comercio": 1,
+    "precio_actual": "1.14",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.277Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 63,
+  "fields": {
+    "producto": 63,
+    "comercio": 1,
+    "precio_actual": "4.19",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.284Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 64,
+  "fields": {
+    "producto": 64,
+    "comercio": 1,
+    "precio_actual": "2.38",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.289Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 65,
+  "fields": {
+    "producto": 65,
+    "comercio": 1,
+    "precio_actual": "1.14",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.295Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 66,
+  "fields": {
+    "producto": 66,
+    "comercio": 1,
+    "precio_actual": "4.19",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.301Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 67,
+  "fields": {
+    "producto": 67,
+    "comercio": 1,
+    "precio_actual": "1.14",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.306Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 68,
+  "fields": {
+    "producto": 68,
+    "comercio": 1,
+    "precio_actual": "1.17",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.312Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 69,
+  "fields": {
+    "producto": 69,
+    "comercio": 1,
+    "precio_actual": "1.05",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.317Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 70,
+  "fields": {
+    "producto": 70,
+    "comercio": 1,
+    "precio_actual": "1.05",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.323Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 71,
+  "fields": {
+    "producto": 71,
+    "comercio": 1,
+    "precio_actual": "0.91",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.329Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 72,
+  "fields": {
+    "producto": 72,
+    "comercio": 1,
+    "precio_actual": "1.01",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.336Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 73,
+  "fields": {
+    "producto": 73,
+    "comercio": 1,
+    "precio_actual": "6.02",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.343Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 74,
+  "fields": {
+    "producto": 74,
+    "comercio": 1,
+    "precio_actual": "0.71",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.349Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 75,
+  "fields": {
+    "producto": 75,
+    "comercio": 1,
+    "precio_actual": "0.97",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.355Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 76,
+  "fields": {
+    "producto": 76,
+    "comercio": 1,
+    "precio_actual": "5.88",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.362Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 77,
+  "fields": {
+    "producto": 77,
+    "comercio": 1,
+    "precio_actual": "3.24",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.374Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 78,
+  "fields": {
+    "producto": 78,
+    "comercio": 1,
+    "precio_actual": "0.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.387Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 79,
+  "fields": {
+    "producto": 79,
+    "comercio": 1,
+    "precio_actual": "0.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.399Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 80,
+  "fields": {
+    "producto": 80,
+    "comercio": 1,
+    "precio_actual": "0.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T22:37:46.412Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 81,
+  "fields": {
+    "producto": 81,
+    "comercio": 2,
+    "precio_actual": "3.94",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.656Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 82,
+  "fields": {
+    "producto": 82,
+    "comercio": 2,
+    "precio_actual": "3.78",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.661Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 83,
+  "fields": {
+    "producto": 83,
+    "comercio": 2,
+    "precio_actual": "4.04",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.666Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 84,
+  "fields": {
+    "producto": 84,
+    "comercio": 2,
+    "precio_actual": "2.47",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.670Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 85,
+  "fields": {
+    "producto": 85,
+    "comercio": 2,
+    "precio_actual": "3.94",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.674Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 86,
+  "fields": {
+    "producto": 86,
+    "comercio": 2,
+    "precio_actual": "3.94",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.679Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 87,
+  "fields": {
+    "producto": 87,
+    "comercio": 2,
+    "precio_actual": "3.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.684Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 88,
+  "fields": {
+    "producto": 88,
+    "comercio": 2,
+    "precio_actual": "0.89",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.688Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 89,
+  "fields": {
+    "producto": 89,
+    "comercio": 2,
+    "precio_actual": "2.27",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.693Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 90,
+  "fields": {
+    "producto": 90,
+    "comercio": 2,
+    "precio_actual": "0.72",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.698Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 91,
+  "fields": {
+    "producto": 91,
+    "comercio": 2,
+    "precio_actual": "0.72",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.702Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 92,
+  "fields": {
+    "producto": 92,
+    "comercio": 2,
+    "precio_actual": "0.72",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.707Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 93,
+  "fields": {
+    "producto": 93,
+    "comercio": 2,
+    "precio_actual": "0.72",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.713Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 94,
+  "fields": {
+    "producto": 94,
+    "comercio": 2,
+    "precio_actual": "1.98",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.718Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 95,
+  "fields": {
+    "producto": 95,
+    "comercio": 2,
+    "precio_actual": "4.15",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.724Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 96,
+  "fields": {
+    "producto": 96,
+    "comercio": 2,
+    "precio_actual": "4.05",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.728Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 97,
+  "fields": {
+    "producto": 97,
+    "comercio": 2,
+    "precio_actual": "3.99",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.733Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 98,
+  "fields": {
+    "producto": 98,
+    "comercio": 2,
+    "precio_actual": "1.08",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.737Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 99,
+  "fields": {
+    "producto": 99,
+    "comercio": 2,
+    "precio_actual": "3.36",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.742Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 100,
+  "fields": {
+    "producto": 100,
+    "comercio": 2,
+    "precio_actual": "3.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.746Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 101,
+  "fields": {
+    "producto": 101,
+    "comercio": 2,
+    "precio_actual": "1.88",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.751Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 102,
+  "fields": {
+    "producto": 102,
+    "comercio": 2,
+    "precio_actual": "0.61",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.756Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 103,
+  "fields": {
+    "producto": 103,
+    "comercio": 2,
+    "precio_actual": "0.61",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.761Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 104,
+  "fields": {
+    "producto": 104,
+    "comercio": 2,
+    "precio_actual": "4.75",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.766Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 105,
+  "fields": {
+    "producto": 105,
+    "comercio": 2,
+    "precio_actual": "0.89",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.771Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 106,
+  "fields": {
+    "producto": 106,
+    "comercio": 2,
+    "precio_actual": "8.28",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.776Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 107,
+  "fields": {
+    "producto": 107,
+    "comercio": 2,
+    "precio_actual": "1.46",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.781Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 108,
+  "fields": {
+    "producto": 108,
+    "comercio": 2,
+    "precio_actual": "5.85",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.785Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 109,
+  "fields": {
+    "producto": 109,
+    "comercio": 2,
+    "precio_actual": "1.18",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.790Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 110,
+  "fields": {
+    "producto": 110,
+    "comercio": 2,
+    "precio_actual": "1.13",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.794Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 111,
+  "fields": {
+    "producto": 111,
+    "comercio": 2,
+    "precio_actual": "2.51",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.799Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 112,
+  "fields": {
+    "producto": 112,
+    "comercio": 2,
+    "precio_actual": "2.02",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.805Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 113,
+  "fields": {
+    "producto": 113,
+    "comercio": 2,
+    "precio_actual": "2.13",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.811Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 114,
+  "fields": {
+    "producto": 114,
+    "comercio": 2,
+    "precio_actual": "0.89",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.817Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 115,
+  "fields": {
+    "producto": 115,
+    "comercio": 2,
+    "precio_actual": "0.69",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.823Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 116,
+  "fields": {
+    "producto": 116,
+    "comercio": 2,
+    "precio_actual": "4.58",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.828Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 117,
+  "fields": {
+    "producto": 117,
+    "comercio": 2,
+    "precio_actual": "0.66",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.834Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 118,
+  "fields": {
+    "producto": 118,
+    "comercio": 2,
+    "precio_actual": "9.72",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.840Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 119,
+  "fields": {
+    "producto": 119,
+    "comercio": 2,
+    "precio_actual": "2.55",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.846Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 120,
+  "fields": {
+    "producto": 120,
+    "comercio": 2,
+    "precio_actual": "3.78",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.852Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 121,
+  "fields": {
+    "producto": 121,
+    "comercio": 2,
+    "precio_actual": "2.29",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.858Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 122,
+  "fields": {
+    "producto": 122,
+    "comercio": 2,
+    "precio_actual": "4.83",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.864Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 123,
+  "fields": {
+    "producto": 123,
+    "comercio": 2,
+    "precio_actual": "3.37",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.870Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 124,
+  "fields": {
+    "producto": 124,
+    "comercio": 2,
+    "precio_actual": "3.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.876Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 125,
+  "fields": {
+    "producto": 125,
+    "comercio": 2,
+    "precio_actual": "3.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.883Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 126,
+  "fields": {
+    "producto": 126,
+    "comercio": 2,
+    "precio_actual": "1.40",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.889Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 127,
+  "fields": {
+    "producto": 127,
+    "comercio": 2,
+    "precio_actual": "5.85",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.895Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 128,
+  "fields": {
+    "producto": 128,
+    "comercio": 2,
+    "precio_actual": "1.36",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.901Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 129,
+  "fields": {
+    "producto": 129,
+    "comercio": 2,
+    "precio_actual": "1.18",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.907Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 130,
+  "fields": {
+    "producto": 130,
+    "comercio": 2,
+    "precio_actual": "1.59",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.913Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 131,
+  "fields": {
+    "producto": 131,
+    "comercio": 2,
+    "precio_actual": "4.59",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.919Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 132,
+  "fields": {
+    "producto": 132,
+    "comercio": 2,
+    "precio_actual": "1.16",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.925Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 133,
+  "fields": {
+    "producto": 133,
+    "comercio": 2,
+    "precio_actual": "1.10",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.931Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 134,
+  "fields": {
+    "producto": 134,
+    "comercio": 2,
+    "precio_actual": "1.23",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.937Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 135,
+  "fields": {
+    "producto": 135,
+    "comercio": 2,
+    "precio_actual": "0.77",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.943Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 136,
+  "fields": {
+    "producto": 136,
+    "comercio": 2,
+    "precio_actual": "4.69",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.950Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 137,
+  "fields": {
+    "producto": 137,
+    "comercio": 2,
+    "precio_actual": "1.51",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.956Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 138,
+  "fields": {
+    "producto": 138,
+    "comercio": 2,
+    "precio_actual": "1.08",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.962Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 139,
+  "fields": {
+    "producto": 139,
+    "comercio": 2,
+    "precio_actual": "6.74",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.968Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 140,
+  "fields": {
+    "producto": 140,
+    "comercio": 2,
+    "precio_actual": "1.64",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.975Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 141,
+  "fields": {
+    "producto": 141,
+    "comercio": 2,
+    "precio_actual": "1.50",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.981Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 142,
+  "fields": {
+    "producto": 142,
+    "comercio": 2,
+    "precio_actual": "4.24",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.987Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 143,
+  "fields": {
+    "producto": 143,
+    "comercio": 2,
+    "precio_actual": "0.77",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.992Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 144,
+  "fields": {
+    "producto": 144,
+    "comercio": 2,
+    "precio_actual": "1.31",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:54.998Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 145,
+  "fields": {
+    "producto": 145,
+    "comercio": 2,
+    "precio_actual": "1.78",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.005Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 146,
+  "fields": {
+    "producto": 146,
+    "comercio": 2,
+    "precio_actual": "2.54",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.011Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 147,
+  "fields": {
+    "producto": 147,
+    "comercio": 2,
+    "precio_actual": "1.47",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.017Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 148,
+  "fields": {
+    "producto": 148,
+    "comercio": 2,
+    "precio_actual": "1.06",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.022Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 149,
+  "fields": {
+    "producto": 149,
+    "comercio": 2,
+    "precio_actual": "2.10",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.028Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 150,
+  "fields": {
+    "producto": 150,
+    "comercio": 2,
+    "precio_actual": "3.87",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.034Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 151,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_actual": "0.92",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.057Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 152,
+  "fields": {
+    "producto": 152,
+    "comercio": 2,
+    "precio_actual": "7.95",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.063Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 153,
+  "fields": {
+    "producto": 153,
+    "comercio": 2,
+    "precio_actual": "9.56",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.069Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 154,
+  "fields": {
+    "producto": 154,
+    "comercio": 2,
+    "precio_actual": "4.33",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.075Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 155,
+  "fields": {
+    "producto": 155,
+    "comercio": 2,
+    "precio_actual": "1.01",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.080Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 156,
+  "fields": {
+    "producto": 156,
+    "comercio": 2,
+    "precio_actual": "4.74",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.086Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 157,
+  "fields": {
+    "producto": 157,
+    "comercio": 2,
+    "precio_actual": "0.89",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.092Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 158,
+  "fields": {
+    "producto": 158,
+    "comercio": 2,
+    "precio_actual": "1.33",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.098Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 159,
+  "fields": {
+    "producto": 159,
+    "comercio": 2,
+    "precio_actual": "1.28",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:11:55.104Z"
+  }
+},
+{
+  "model": "precios.precio",
+  "pk": 160,
+  "fields": {
+    "producto": 75,
+    "comercio": 2,
+    "precio_actual": "0.96",
+    "precio_oferta": null,
+    "en_oferta": false,
+    "fecha_actualizacion": "2026-06-27T23:19:56.766Z"
+  }
+},
+{
+  "model": "precios.historialprecio",
+  "pk": 1,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_registrado": "3.47",
+    "fecha_registro": "2026-06-27T22:59:48.546Z"
+  }
+},
+{
+  "model": "precios.historialprecio",
+  "pk": 2,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_registrado": "1.78",
+    "fecha_registro": "2026-06-27T22:59:48.554Z"
+  }
+},
+{
+  "model": "precios.historialprecio",
+  "pk": 3,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_registrado": "0.92",
+    "fecha_registro": "2026-06-27T23:11:55.040Z"
+  }
+},
+{
+  "model": "precios.historialprecio",
+  "pk": 4,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_registrado": "3.47",
+    "fecha_registro": "2026-06-27T23:11:55.049Z"
+  }
+},
+{
+  "model": "precios.historialprecio",
+  "pk": 5,
+  "fields": {
+    "producto": 151,
+    "comercio": 2,
+    "precio_registrado": "1.78",
+    "fecha_registro": "2026-06-27T23:11:55.056Z"
+  }
+},
+{
+  "model": "comparador.listacomparacion",
+  "pk": 1,
+  "fields": {
+    "usuario": 9,
+    "nombre": "Mi comparación",
+    "fecha_creacion": "2026-06-28T20:42:26.710Z"
+  }
+}
+]
