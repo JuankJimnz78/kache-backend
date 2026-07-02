@@ -98,4 +98,3 @@ jobs:
             curl -sf http://127.0.0.1/admin/ && echo 'API OK' || echo 'API ERROR'
             echo 'Despliegue completado exitosamente'
           "
-          ENDSSH
