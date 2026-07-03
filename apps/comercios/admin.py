@@ -4,7 +4,8 @@ from .models import Comercio, Sucursal
 
 @admin.register(Comercio)
 class ComercioAdmin(admin.ModelAdmin):
-    list_display = ["id", "nombre", "tipo", "activo", "destacado", "fecha_fin_destacado"]
+    list_display = ["id", "nombre", "tipo", "activo", "destacado", "logo_url"]
+    fields = ["nombre", "tipo", "logo_url", "sitio_web", "activo", "destacado", "fecha_fin_destacado"]
     list_filter = ["tipo", "activo", "destacado"]
     search_fields = ["nombre"]
 
