@@ -32,6 +32,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=200)
     marca = models.CharField(max_length=100, blank=True, default="")
     codigo_barras = models.CharField(max_length=50, blank=True, null=True, unique=True)
+    imagen_url = models.URLField(blank=True, null=True)
     descripcion = models.TextField(blank=True, default="")
     unidad_medida = models.CharField(max_length=30, help_text="Ej: 1L, 500g, unidad")
     categoria = models.ForeignKey(
@@ -40,6 +41,7 @@ class Producto(models.Model):
         null=True,
         blank=True,
         related_name="productos",
+        
     )
     creado_en = models.DateTimeField(auto_now_add=True)
 
