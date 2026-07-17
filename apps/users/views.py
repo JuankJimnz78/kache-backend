@@ -1,6 +1,7 @@
 from rest_framework import status, generics
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from .permissions import EsAdmin
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate, get_user_model
@@ -50,6 +51,7 @@ def login_view(request):
         "username": user.username,
         "email": user.email,
         "is_staff": user.is_staff,
+        "rol": user.rol,
     })
 
 
@@ -73,6 +75,7 @@ def register_view(request):
         "username": user.username,
         "email": user.email,
         "is_staff": user.is_staff,
+        "rol": user.rol,
     }, status=status.HTTP_201_CREATED)
 
 
@@ -149,7 +152,7 @@ def password_reset_confirm_view(request):
 # ══════════════════════════════════════════════════════════════
 
 class UserListCreateView(generics.ListCreateAPIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [EsAdmin]
     serializer_class = UserSerializer
 
     def get_queryset(self):
@@ -187,7 +190,7 @@ class UserListCreateView(generics.ListCreateAPIView):
 
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [EsAdmin]
     queryset = User.objects.all()
 
     def get_serializer_class(self):
@@ -209,7 +212,7 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 @api_view(["POST"])
-@permission_classes([IsAdminUser])
+@permission_classes([EsAdmin])
 def toggle_active_view(request, pk):
     try:
         user = User.objects.get(pk=pk)
@@ -230,7 +233,7 @@ def profile_view(request):
 
 
 @api_view(["GET"])
-@permission_classes([IsAdminUser])
+@permission_classes([EsAdmin])
 def user_stats_view(request):
     total = User.objects.count()
     active = User.objects.filter(is_active=True).count()

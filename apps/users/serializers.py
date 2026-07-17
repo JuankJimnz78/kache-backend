@@ -67,7 +67,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             "id", "username", "email", "first_name", "last_name",
-            "is_staff", "is_active", "date_joined", "num_orders",
+            "is_staff", "is_active", "rol", "date_joined", "num_orders",
         ]
 
     def get_num_orders(self, obj):
@@ -81,7 +81,7 @@ class UserRequestSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             "username", "email", "first_name", "last_name",
-            "is_staff", "is_active", "password",
+            "is_staff", "is_active", "rol", "password",
         ]
 
     def create(self, validated_data):

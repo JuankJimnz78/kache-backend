@@ -1,5 +1,6 @@
 from rest_framework import generics, status
-from rest_framework.permissions import AllowAny, IsAdminUser
+from rest_framework.permissions import AllowAny
+from apps.users.permissions import EsAdmin
 from rest_framework.response import Response
 
 from .models import Comercio, Sucursal
@@ -13,7 +14,7 @@ class ComercioListCreateView(generics.ListCreateAPIView):
     def get_permissions(self):
         if self.request.method == "GET":
             return [AllowAny()]
-        return [IsAdminUser()]
+        return [EsAdmin()]
 
     def get_serializer_class(self):
         if self.request.method == "POST":
@@ -65,7 +66,7 @@ class ComercioDetailView(generics.RetrieveUpdateDestroyAPIView):
     def get_permissions(self):
         if self.request.method == "GET":
             return [AllowAny()]
-        return [IsAdminUser()]
+        return [EsAdmin()]
 
     def get_serializer_class(self):
         if self.request.method in ("PATCH", "PUT"):
@@ -89,7 +90,7 @@ class SucursalListCreateView(generics.ListCreateAPIView):
     def get_permissions(self):
         if self.request.method == "GET":
             return [AllowAny()]
-        return [IsAdminUser()]
+        return [EsAdmin()]
 
     def get_serializer_class(self):
         if self.request.method == "POST":
@@ -126,7 +127,7 @@ class SucursalDetailView(generics.RetrieveUpdateDestroyAPIView):
     def get_permissions(self):
         if self.request.method == "GET":
             return [AllowAny()]
-        return [IsAdminUser()]
+        return [EsAdmin()]
 
     def get_serializer_class(self):
         if self.request.method in ("PATCH", "PUT"):
