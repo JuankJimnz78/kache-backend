@@ -11,15 +11,27 @@ from playwright.sync_api import sync_playwright
 
 from apps.comercios.models import Comercio
 from apps.catalogo.models import Categoria, Producto
+from apps.catalogo.utils import (
+    comparten_palabra_clave,
+    detectar_marca,
+    extraer_cantidad_normalizada,
+    extraer_conteo_normalizado,
+    extraer_dosis_normalizada,
+    normalizar_nombre,
+)
 from apps.precios.models import Precio
 
 URL_BASE = "https://www.supermaxi.com"
 NOMBRE_LOCAL_DEFAULT = "Supermaxi Iñaquito"
 
+# Aceites y Arroz: verificadas contra el sitio real, ambas se cruzan con
+# marcas nacionales que también vende Coral (La Favorita, Banquete, Real).
 CATEGORIAS_OBJETIVO = [
-    ("https://www.supermaxi.com/product-category/super-ofertas/", "Ofertas"),
-    ("https://www.supermaxi.com/product-category/leches-y-sustitutos-lacteos/", "Leches"),
+    ("https://www.supermaxi.com/product-category/aceites-y-grasas-alacena/", "Aceites"),
+    ("https://www.supermaxi.com/product-category/arroz-alacena/", "Arroz"),
 ]
+
+MAX_PAGINAS_POR_CATEGORIA = 5
 
 
 class Command(BaseCommand):
@@ -39,17 +51,54 @@ class Command(BaseCommand):
             creados, actualizados = 0, 0
 
             for item in items:
+                nombre_normalizado = normalizar_nombre(item["nombre"])
                 producto = None
                 if item.get("codigo_barras"):
                     producto = Producto.objects.filter(codigo_barras=item["codigo_barras"]).first()
                 if producto is None:
-                    producto, _ = Producto.objects.get_or_create(
+                    producto = Producto.objects.filter(nombre_normalizado=nombre_normalizado).first()
+                if producto is None:
+                    marca = detectar_marca(nombre_normalizado)
+                    if marca:
+                        # Farmacia: dosis (mg/gr) + conteo de unidades (x24,
+                        # C/50) deben coincidir EXACTO los dos -- una fusión
+                        # incorrecta acá es más delicada que en aceites/pinturas,
+                        # así que si falta cualquiera de los dos no se fusiona
+                        # por este camino (mejor falso negativo que falso positivo).
+                        dosis = extraer_dosis_normalizada(item["nombre"])
+                        conteo = extraer_conteo_normalizado(item["nombre"])
+                        if dosis and conteo:
+                            producto = Producto.objects.filter(
+                                marca_normalizada=marca,
+                                dosis_normalizada=dosis,
+                                conteo_normalizado=conteo,
+                            ).exclude(precios__comercio=comercio).first()
+                        if producto is None:
+                            # Solo sirve para puentear ENTRE comercios distintos: si
+                            # este comercio ya tiene un Precio propio en la misma
+                            # marca+cantidad, son dos items distintos de su propio
+                            # catálogo y no deben fusionarse solo por compartir esa clave.
+                            cantidad = extraer_cantidad_normalizada(item["nombre"])
+                            if cantidad:
+                                # Marca+cantidad solas no distinguen líneas de producto
+                                # distintas (ej. una pintura "para canchas" vs un esmalte
+                                # estándar, misma marca y presentación) -- se exige además
+                                # que compartan alguna palabra más allá de marca/unidad.
+                                candidatos = Producto.objects.filter(
+                                    marca_normalizada=marca, cantidad_normalizada=cantidad
+                                ).exclude(precios__comercio=comercio)
+                                producto = next(
+                                    (c for c in candidatos if comparten_palabra_clave(
+                                        nombre_normalizado, c.nombre_normalizado, marca
+                                    )),
+                                    None,
+                                )
+                if producto is None:
+                    producto = Producto.objects.create(
                         nombre=item["nombre"],
-                        defaults={
-                            "categoria": categoria,
-                            "unidad_medida": "unidad",
-                            "codigo_barras": item.get("codigo_barras"),
-                        },
+                        categoria=categoria,
+                        unidad_medida="unidad",
+                        codigo_barras=item.get("codigo_barras"),
                     )
                 _, fue_creado = Precio.objects.update_or_create(
                     producto=producto,
@@ -118,32 +167,37 @@ class Command(BaseCommand):
             self.stdout.write(self.style.WARNING(f"  Error general seleccionando local: {e}"))
 
     def _scrapear_categoria(self, page, url):
-        page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        page.wait_for_timeout(3000)
-
-        productos_el = page.query_selector_all("li.product")
-        self.stdout.write(f"  Encontrados {len(productos_el)} productos")
-
         items = []
-        for prod_el in productos_el:
-            nombre_el = prod_el.query_selector(".woocommerce-loop-product__title")
-            precio_el = prod_el.query_selector(".cf_api_regular_price")
-            codigo_el = prod_el.query_selector(".cf_api_barcode")
-            if not nombre_el or not precio_el:
-                continue
+        for numero_pagina in range(1, MAX_PAGINAS_POR_CATEGORIA + 1):
+            url_pagina = url if numero_pagina == 1 else f"{url}page/{numero_pagina}/"
+            page.goto(url_pagina, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_timeout(3000)
 
-            nombre = nombre_el.inner_text().strip()
-            precio_valor = self._limpiar_precio(precio_el.inner_text())
-            if precio_valor is None:
-                continue
+            productos_el = page.query_selector_all("li.product")
+            if not productos_el:
+                self.stdout.write(f"  Página {numero_pagina}: sin productos, fin de la categoría.")
+                break
+            self.stdout.write(f"  Página {numero_pagina}: {len(productos_el)} productos")
 
-            codigo_barras = None
-            if codigo_el:
-                match_codigo = re.search(r"\d+", codigo_el.inner_text())
-                if match_codigo:
-                    codigo_barras = match_codigo.group()
+            for prod_el in productos_el:
+                nombre_el = prod_el.query_selector(".woocommerce-loop-product__title")
+                precio_el = prod_el.query_selector(".cf_api_regular_price")
+                codigo_el = prod_el.query_selector(".cf_api_barcode")
+                if not nombre_el or not precio_el:
+                    continue
 
-            items.append({"nombre": nombre, "precio": precio_valor, "codigo_barras": codigo_barras})
+                nombre = nombre_el.inner_text().strip()
+                precio_valor = self._limpiar_precio(precio_el.inner_text())
+                if precio_valor is None:
+                    continue
+
+                codigo_barras = None
+                if codigo_el:
+                    match_codigo = re.search(r"\d+", codigo_el.inner_text())
+                    if match_codigo:
+                        codigo_barras = match_codigo.group()
+
+                items.append({"nombre": nombre, "precio": precio_valor, "codigo_barras": codigo_barras})
 
         return items
 

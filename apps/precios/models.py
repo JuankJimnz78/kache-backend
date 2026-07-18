@@ -1,9 +1,24 @@
 from django.db import models
+from django.db.models import Case, DecimalField, F, When
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 from apps.catalogo.models import Producto
 from apps.comercios.models import Comercio
+
+
+def precio_efectivo_expression():
+    """
+    Equivalente SQL de Precio.precio_efectivo (property de Python, no se puede
+    usar directamente en annotate()/aggregate()). Úsala sobre cualquier
+    queryset de Precio (o su related manager) para obtener el precio que
+    realmente paga el usuario a nivel de base de datos.
+    """
+    return Case(
+        When(en_oferta=True, precio_oferta__isnull=False, then=F("precio_oferta")),
+        default=F("precio_actual"),
+        output_field=DecimalField(max_digits=10, decimal_places=2),
+    )
 
 
 class Precio(models.Model):

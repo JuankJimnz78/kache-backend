@@ -1,17 +1,14 @@
 """
-Scraper de Fybeca. El sitio migró de VTEX a Salesforce Commerce Cloud
-(Demandware); la API vieja de VTEX ya no existe (por eso el scraper
-anterior no traía nada). No hay una API JSON de catálogo pública, pero el
-listado de categoría pagina vía el endpoint HTML "Search-UpdateGrid", que
-responde directo a requests (sin sesión ni JS) -- no hace falta Playwright
-en absoluto, se parsea el HTML con BeautifulSoup.
+Scraper de Kywi usando la API pública de VTEX. A diferencia de los demás
+sitios revisados hasta ahora, Kywi sí trae codigo_barras (EAN) real y
+poblado para buena parte de su catálogo, así que ese es el mejor caso
+posible para el matching.
 """
 
 import time
 from decimal import Decimal, InvalidOperation
 
 import requests
-from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand
 
 from apps.comercios.models import Comercio
@@ -26,33 +23,31 @@ from apps.catalogo.utils import (
 )
 from apps.precios.models import Precio
 
-URL_BASE = "https://www.fybeca.com"
-GRID_URL = f"{URL_BASE}/on/demandware.store/Sites-FybecaEcuador-Site/es_EC/Search-UpdateGrid"
+URL_BASE = "https://www.kywi.com.ec"
 
-# Mismos nombres de categoría que ya usa Cruz Azul (la otra farmacia), para
-# maximizar la posibilidad de overlap real entre las 2.
+# Pinturas: verificada contra el sitio real, se cruza con la marca nacional
+# Pinturas Unidas (y Pintuco) que también vende Ferrisariato/Frecuento.
 CATEGORIAS_OBJETIVO = [
-    ("dolor_y_fiebre", "Dolor y Fiebre"),
-    ("vitaminas_y_minerales", "Vitaminas y Suplementos"),
+    ("decoracion-y-acabados/pinturas-y-complementos/pintura-arquitectonica", "Pinturas"),
 ]
 
-PRODUCTOS_POR_PAGINA = 18
+PRODUCTOS_POR_PAGINA = 50
 MAX_PRODUCTOS = 300
 
 
 class Command(BaseCommand):
-    help = "Scrapea productos y precios de Fybeca hacia la base de datos de Kache"
+    help = "Scrapea productos y precios de Kywi hacia la base de datos de Kache"
 
     def handle(self, *args, **options):
         comercio, _ = Comercio.objects.get_or_create(
-            nombre="Fybeca",
-            tipo=Comercio.TIPO_FARMACIA,
+            nombre="Kywi",
+            tipo=Comercio.TIPO_FERRETERIA,
             defaults={"sitio_web": URL_BASE},
         )
 
-        for cgid, nombre_categoria in CATEGORIAS_OBJETIVO:
+        for slug_categoria, nombre_categoria in CATEGORIAS_OBJETIVO:
             self.stdout.write(f"Scrapeando: {nombre_categoria}")
-            items = self._obtener_productos(cgid)
+            items = self._obtener_productos(slug_categoria)
             self.stdout.write(f"  Encontrados {len(items)} productos")
             if not items:
                 continue
@@ -62,7 +57,11 @@ class Command(BaseCommand):
 
             for item in items:
                 nombre_normalizado = normalizar_nombre(item["nombre"])
-                producto = Producto.objects.filter(nombre_normalizado=nombre_normalizado).first()
+                producto = None
+                if item.get("codigo_barras"):
+                    producto = Producto.objects.filter(codigo_barras=item["codigo_barras"]).first()
+                if producto is None:
+                    producto = Producto.objects.filter(nombre_normalizado=nombre_normalizado).first()
                 if producto is None:
                     marca = detectar_marca(nombre_normalizado)
                     if marca:
@@ -80,9 +79,10 @@ class Command(BaseCommand):
                                 conteo_normalizado=conteo,
                             ).exclude(precios__comercio=comercio).first()
                         if producto is None:
-                            # Solo puentea ENTRE comercios distintos: si Fybeca ya
-                            # tiene su propio Precio en esta marca+cantidad, son
-                            # dos items distintos de su propio catálogo.
+                            # Solo sirve para puentear ENTRE comercios distintos: si
+                            # este comercio ya tiene un Precio propio en la misma
+                            # marca+cantidad, son dos items distintos de su propio
+                            # catálogo y no deben fusionarse solo por compartir esa clave.
                             cantidad = extraer_cantidad_normalizada(item["nombre"])
                             if cantidad:
                                 # Marca+cantidad solas no distinguen líneas de producto
@@ -105,6 +105,7 @@ class Command(BaseCommand):
                         marca=item.get("marca", ""),
                         unidad_medida="unidad",
                         imagen_url=item.get("imagen_url"),
+                        codigo_barras=item.get("codigo_barras"),
                     )
                 _, fue_creado = Precio.objects.update_or_create(
                     producto=producto,
@@ -120,58 +121,71 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("Listo."))
 
-    def _obtener_productos(self, cgid):
+    def _obtener_productos(self, slug_categoria):
         items = []
         pagina = 0
 
         while len(items) < MAX_PRODUCTOS:
-            url = f"{GRID_URL}?cgid={cgid}&start={pagina * PRODUCTOS_POR_PAGINA}&sz={PRODUCTOS_POR_PAGINA}"
+            url = (
+                f"{URL_BASE}/api/catalog_system/pub/products/search/{slug_categoria}"
+                f"?_from={pagina * PRODUCTOS_POR_PAGINA}&_to={(pagina + 1) * PRODUCTOS_POR_PAGINA - 1}"
+            )
             try:
-                resp = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
-                if resp.status_code != 200:
+                resp = requests.get(url, timeout=15, headers={
+                    "User-Agent": "Mozilla/5.0",
+                    "Accept": "application/json",
+                })
+                if resp.status_code not in (200, 206):
+                    break
+                productos = resp.json()
+                if not productos or not isinstance(productos, list):
                     break
 
-                soup = BeautifulSoup(resp.text, "html.parser")
-                tiles = soup.select("div.product-tile")
-                if not tiles:
-                    break
-
-                for tile in tiles:
-                    nombre_el = tile.select_one(".pdp-link a.link")
-                    precio_el = tile.select_one(".price .value")
-                    marca_el = tile.select_one(".product-brand")
-                    img_el = tile.select_one(".tile-image")
-
-                    if not nombre_el or not precio_el:
+                for p in productos:
+                    nombre = (p.get("productName") or "").strip()
+                    marca = (p.get("brand") or "").strip()
+                    skus = p.get("items", [])
+                    if not nombre or not skus:
                         continue
 
-                    nombre = nombre_el.get_text(strip=True)
-                    precio_attr = precio_el.get("content")
-                    if not precio_attr:
-                        continue
-                    try:
-                        precio_valor = Decimal(precio_attr).quantize(Decimal("0.01"))
-                    except InvalidOperation:
-                        continue
-                    if precio_valor <= 0:
-                        continue
+                    imagen_url = None
+                    imagenes = skus[0].get("images", [])
+                    if imagenes:
+                        imagen_url = imagenes[0].get("imageUrl")
 
-                    marca = marca_el.get_text(strip=True) if marca_el else ""
-                    imagen_url = img_el.get("src") if img_el else None
-                    if imagen_url and imagen_url.startswith("/"):
-                        imagen_url = URL_BASE + imagen_url
+                    codigo_barras = None
+                    for sku in skus:
+                        ean = (sku.get("ean") or "").strip()
+                        if ean:
+                            codigo_barras = ean
+                            break
 
-                    items.append({
-                        "nombre": nombre,
-                        "marca": marca,
-                        "precio": precio_valor,
-                        "imagen_url": imagen_url,
-                    })
+                    for sku in skus:
+                        for seller in sku.get("sellers", []):
+                            oferta = seller.get("commertialOffer", {})
+                            precio_raw = oferta.get("Price", 0)
+                            disponible = oferta.get("IsAvailable", False)
+                            if disponible and precio_raw > 0:
+                                try:
+                                    precio = Decimal(str(precio_raw)).quantize(Decimal("0.01"))
+                                    items.append({
+                                        "nombre": nombre,
+                                        "marca": marca,
+                                        "precio": precio,
+                                        "imagen_url": imagen_url,
+                                        "codigo_barras": codigo_barras,
+                                    })
+                                except InvalidOperation:
+                                    pass
+                                break
+                        else:
+                            continue
+                        break
 
-                if len(tiles) < PRODUCTOS_POR_PAGINA:
+                if len(productos) < PRODUCTOS_POR_PAGINA:
                     break
                 pagina += 1
-                time.sleep(0.3)
+                time.sleep(0.5)
 
             except Exception as e:
                 self.stdout.write(self.style.WARNING(f"  Error: {e}"))

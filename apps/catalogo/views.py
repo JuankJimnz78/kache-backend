@@ -2,7 +2,9 @@ from rest_framework import generics, status
 from rest_framework.permissions import AllowAny
 from apps.users.permissions import EsAdmin, EsAdminUOperador
 from rest_framework.response import Response
-from django.db.models import Q
+from django.db.models import DecimalField, Exists, OuterRef, Q, Subquery
+
+from apps.precios.models import Precio, precio_efectivo_expression
 
 from .models import Categoria, Producto
 from .serializers import (
@@ -72,7 +74,25 @@ class ProductoListCreateView(generics.ListCreateAPIView):
         return ProductoSerializer
 
     def get_queryset(self):
-        qs = Producto.objects.select_related("categoria").all()
+        # Subqueries correlacionadas (no joins) para no interferir con el
+        # filtro `tipo` de abajo, que sí hace join+distinct sobre `precios`.
+        precio_minimo_subquery = (
+            Precio.objects.filter(producto=OuterRef("pk"))
+            .annotate(efectivo=precio_efectivo_expression())
+            .order_by("efectivo")
+            .values("efectivo")[:1]
+        )
+        oferta_subquery = Precio.objects.filter(
+            producto=OuterRef("pk"), en_oferta=True, precio_oferta__isnull=False
+        )
+
+        qs = Producto.objects.select_related("categoria").annotate(
+            precio_desde=Subquery(
+                precio_minimo_subquery,
+                output_field=DecimalField(max_digits=10, decimal_places=2),
+            ),
+            tiene_oferta=Exists(oferta_subquery),
+        )
         params = self.request.query_params
 
         buscar = params.get("buscar")

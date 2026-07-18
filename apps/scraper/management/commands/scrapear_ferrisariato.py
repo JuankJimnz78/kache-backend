@@ -1,17 +1,15 @@
 """
-Scraper de Fybeca. El sitio migró de VTEX a Salesforce Commerce Cloud
-(Demandware); la API vieja de VTEX ya no existe (por eso el scraper
-anterior no traía nada). No hay una API JSON de catálogo pública, pero el
-listado de categoría pagina vía el endpoint HTML "Search-UpdateGrid", que
-responde directo a requests (sin sesión ni JS) -- no hace falta Playwright
-en absoluto, se parsea el HTML con BeautifulSoup.
+Scraper de Ferrisariato. ferrisariato.com es solo un sitio corporativo (sin
+catálogo propio, protegido por Incapsula); su tienda real vive en
+frecuento.com, el marketplace del grupo Corporación El Rosado (mismo grupo
+que Coral, pero con una plataforma propia distinta a Magento). La API en
+app.frecuento.com es JSON público sin login, así que no hace falta Playwright.
 """
 
 import time
 from decimal import Decimal, InvalidOperation
 
 import requests
-from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand
 
 from apps.comercios.models import Comercio
@@ -26,33 +24,31 @@ from apps.catalogo.utils import (
 )
 from apps.precios.models import Precio
 
-URL_BASE = "https://www.fybeca.com"
-GRID_URL = f"{URL_BASE}/on/demandware.store/Sites-FybecaEcuador-Site/es_EC/Search-UpdateGrid"
+URL_BASE = "https://www.frecuento.com"
+API_BASE = "https://app.frecuento.com"
 
-# Mismos nombres de categoría que ya usa Cruz Azul (la otra farmacia), para
-# maximizar la posibilidad de overlap real entre las 2.
+# Pinturas: verificada contra el sitio real, se cruza con la marca nacional
+# Pinturas Unidas (y Pintuco) que también vende Kywi.
 CATEGORIAS_OBJETIVO = [
-    ("dolor_y_fiebre", "Dolor y Fiebre"),
-    ("vitaminas_y_minerales", "Vitaminas y Suplementos"),
+    (18300, "Pinturas"),
 ]
 
-PRODUCTOS_POR_PAGINA = 18
-MAX_PRODUCTOS = 300
+MAX_PAGINAS_POR_CATEGORIA = 5
 
 
 class Command(BaseCommand):
-    help = "Scrapea productos y precios de Fybeca hacia la base de datos de Kache"
+    help = "Scrapea productos y precios de Ferrisariato (vía frecuento.com) hacia la base de datos de Kache"
 
     def handle(self, *args, **options):
         comercio, _ = Comercio.objects.get_or_create(
-            nombre="Fybeca",
-            tipo=Comercio.TIPO_FARMACIA,
+            nombre="Ferrisariato",
+            tipo=Comercio.TIPO_FERRETERIA,
             defaults={"sitio_web": URL_BASE},
         )
 
-        for cgid, nombre_categoria in CATEGORIAS_OBJETIVO:
+        for id_categoria, nombre_categoria in CATEGORIAS_OBJETIVO:
             self.stdout.write(f"Scrapeando: {nombre_categoria}")
-            items = self._obtener_productos(cgid)
+            items = self._obtener_productos(id_categoria)
             self.stdout.write(f"  Encontrados {len(items)} productos")
             if not items:
                 continue
@@ -80,9 +76,10 @@ class Command(BaseCommand):
                                 conteo_normalizado=conteo,
                             ).exclude(precios__comercio=comercio).first()
                         if producto is None:
-                            # Solo puentea ENTRE comercios distintos: si Fybeca ya
-                            # tiene su propio Precio en esta marca+cantidad, son
-                            # dos items distintos de su propio catálogo.
+                            # Solo sirve para puentear ENTRE comercios distintos: si
+                            # este comercio ya tiene un Precio propio en la misma
+                            # marca+cantidad, son dos items distintos de su propio
+                            # catálogo y no deben fusionarse solo por compartir esa clave.
                             cantidad = extraer_cantidad_normalizada(item["nombre"])
                             if cantidad:
                                 # Marca+cantidad solas no distinguen líneas de producto
@@ -120,57 +117,50 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("Listo."))
 
-    def _obtener_productos(self, cgid):
+    def _obtener_productos(self, id_categoria):
+        # No trae codigo_barras: la API de Frecuento no expone EAN/GTIN,
+        # solo un "code" interno de SKU (ver diagnóstico previo a implementar).
         items = []
-        pagina = 0
 
-        while len(items) < MAX_PRODUCTOS:
-            url = f"{GRID_URL}?cgid={cgid}&start={pagina * PRODUCTOS_POR_PAGINA}&sz={PRODUCTOS_POR_PAGINA}"
+        for pagina in range(1, MAX_PAGINAS_POR_CATEGORIA + 1):
+            url = f"{API_BASE}/products/?category={id_categoria}&page={pagina}"
             try:
-                resp = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+                resp = requests.get(url, timeout=15, headers={
+                    "User-Agent": "Mozilla/5.0",
+                    "Accept": "application/json",
+                })
                 if resp.status_code != 200:
                     break
-
-                soup = BeautifulSoup(resp.text, "html.parser")
-                tiles = soup.select("div.product-tile")
-                if not tiles:
+                data = resp.json()
+                resultados = data.get("results", [])
+                if not resultados:
                     break
 
-                for tile in tiles:
-                    nombre_el = tile.select_one(".pdp-link a.link")
-                    precio_el = tile.select_one(".price .value")
-                    marca_el = tile.select_one(".product-brand")
-                    img_el = tile.select_one(".tile-image")
-
-                    if not nombre_el or not precio_el:
+                for p in resultados:
+                    nombre = (p.get("name") or "").strip()
+                    if not nombre or not p.get("has_stock"):
                         continue
 
-                    nombre = nombre_el.get_text(strip=True)
-                    precio_attr = precio_el.get("content")
-                    if not precio_attr:
+                    precio_raw = p.get("amount_total")
+                    if not precio_raw:
                         continue
                     try:
-                        precio_valor = Decimal(precio_attr).quantize(Decimal("0.01"))
+                        precio = Decimal(str(precio_raw)).quantize(Decimal("0.01"))
                     except InvalidOperation:
                         continue
-                    if precio_valor <= 0:
-                        continue
 
-                    marca = marca_el.get_text(strip=True) if marca_el else ""
-                    imagen_url = img_el.get("src") if img_el else None
-                    if imagen_url and imagen_url.startswith("/"):
-                        imagen_url = URL_BASE + imagen_url
+                    fotos = p.get("photos") or []
+                    imagen_url = fotos[0] if fotos else None
 
                     items.append({
                         "nombre": nombre,
-                        "marca": marca,
-                        "precio": precio_valor,
+                        "marca": (p.get("brand") or "").strip(),
+                        "precio": precio,
                         "imagen_url": imagen_url,
                     })
 
-                if len(tiles) < PRODUCTOS_POR_PAGINA:
+                if pagina >= data.get("pages", pagina):
                     break
-                pagina += 1
                 time.sleep(0.3)
 
             except Exception as e:

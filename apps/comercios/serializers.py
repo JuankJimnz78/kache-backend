@@ -7,13 +7,30 @@ from .models import Comercio, Sucursal
 class ComercioSerializer(serializers.ModelSerializer):
     id_comercio = serializers.IntegerField(source="id", read_only=True)
     destacado_activo = serializers.BooleanField(read_only=True)
+    promedio_calificacion = serializers.SerializerMethodField()
+    total_resenas = serializers.SerializerMethodField()
 
     class Meta:
         model = Comercio
         fields = [
             "id_comercio", "nombre", "tipo", "logo_url", "sitio_web", "activo",
             "destacado", "fecha_fin_destacado", "destacado_activo",
+            "promedio_calificacion", "total_resenas",
         ]
+
+    def get_promedio_calificacion(self, obj):
+        # ComercioListCreateView ya lo anota (sin N+1). Si el queryset no
+        # viene anotado (detalle individual), se calcula con una sola query
+        # aparte — sigue siendo mejor que traer todas las reseñas al cliente.
+        if hasattr(obj, "promedio_calificacion"):
+            return obj.promedio_calificacion
+        from django.db.models import Avg
+        return obj.resenas.aggregate(promedio=Avg("calificacion"))["promedio"]
+
+    def get_total_resenas(self, obj):
+        if hasattr(obj, "total_resenas"):
+            return obj.total_resenas
+        return obj.resenas.count()
 
 
 class ComercioDetalleSerializer(serializers.ModelSerializer):

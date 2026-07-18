@@ -12,13 +12,24 @@ from playwright.sync_api import sync_playwright
 
 from apps.comercios.models import Comercio
 from apps.catalogo.models import Categoria, Producto
+from apps.catalogo.utils import (
+    comparten_palabra_clave,
+    detectar_marca,
+    extraer_cantidad_normalizada,
+    extraer_conteo_normalizado,
+    extraer_dosis_normalizada,
+    normalizar_nombre,
+)
 from apps.precios.models import Precio
 
 URL_BASE = "https://coralhipermercados.com/"
 NOMBRE_TIENDA_DEFAULT = "Calderon - Quito"
 
+# Aceites y Arroz: verificadas contra el sitio real, ambas se cruzan con
+# marcas nacionales que también vende Supermaxi (La Favorita, Banquete, Real).
 CATEGORIAS_OBJETIVO = [
-    ("https://coralhipermercados.com/comisariato/lacteos-y-derivados/leches.html", "Leches"),
+    ("https://coralhipermercados.com/comisariato/condimentos-y-aderezos/aceites.html", "Aceites"),
+    ("https://coralhipermercados.com/comisariato/alimentos-secos-y-despensa/arroz.html", "Arroz"),
 ]
 
 # Productos puntuales que queremos garantizar, con su categoría destino.
@@ -54,10 +65,56 @@ class Command(BaseCommand):
             creados, actualizados = 0, 0
 
             for item in items:
-                producto, _ = Producto.objects.get_or_create(
-                    nombre=item["nombre"],
-                    defaults={"categoria": categoria, "unidad_medida": "unidad"},
-                )
+                nombre_normalizado = normalizar_nombre(item["nombre"])
+                producto = None
+                if item.get("codigo_barras"):
+                    producto = Producto.objects.filter(codigo_barras=item["codigo_barras"]).first()
+                if producto is None:
+                    producto = Producto.objects.filter(nombre_normalizado=nombre_normalizado).first()
+                if producto is None:
+                    marca = detectar_marca(nombre_normalizado)
+                    if marca:
+                        # Farmacia: dosis (mg/gr) + conteo de unidades (x24,
+                        # C/50) deben coincidir EXACTO los dos -- una fusión
+                        # incorrecta acá es más delicada que en aceites/pinturas,
+                        # así que si falta cualquiera de los dos no se fusiona
+                        # por este camino (mejor falso negativo que falso positivo).
+                        dosis = extraer_dosis_normalizada(item["nombre"])
+                        conteo = extraer_conteo_normalizado(item["nombre"])
+                        if dosis and conteo:
+                            producto = Producto.objects.filter(
+                                marca_normalizada=marca,
+                                dosis_normalizada=dosis,
+                                conteo_normalizado=conteo,
+                            ).exclude(precios__comercio=comercio).first()
+                        if producto is None:
+                            # Solo sirve para puentear ENTRE comercios distintos: si
+                            # este comercio ya tiene un Precio propio en la misma
+                            # marca+cantidad, son dos items distintos de su propio
+                            # catálogo (ej. "Arroz Real" vs "Arroz Real Viejo") y no
+                            # deben fusionarse solo por compartir esa clave.
+                            cantidad = extraer_cantidad_normalizada(item["nombre"])
+                            if cantidad:
+                                # Marca+cantidad solas no distinguen líneas de producto
+                                # distintas (ej. una pintura "para canchas" vs un esmalte
+                                # estándar, misma marca y presentación) -- se exige además
+                                # que compartan alguna palabra más allá de marca/unidad.
+                                candidatos = Producto.objects.filter(
+                                    marca_normalizada=marca, cantidad_normalizada=cantidad
+                                ).exclude(precios__comercio=comercio)
+                                producto = next(
+                                    (c for c in candidatos if comparten_palabra_clave(
+                                        nombre_normalizado, c.nombre_normalizado, marca
+                                    )),
+                                    None,
+                                )
+                if producto is None:
+                    producto = Producto.objects.create(
+                        nombre=item["nombre"],
+                        categoria=categoria,
+                        unidad_medida="unidad",
+                        codigo_barras=item.get("codigo_barras"),
+                    )
                 _, fue_creado = Precio.objects.update_or_create(
                     producto=producto,
                     comercio=comercio,

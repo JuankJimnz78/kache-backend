@@ -14,6 +14,8 @@ dependencies = [
     "psycopg2-binary>=2.9.12",
     "gunicorn>=26.0.0",
     "requests>=2.34.2",
+    "playwright>=1.61.0",
+    "beautifulsoup4>=4.15.0",
 ]
 
 [tool.hatch.build.targets.wheel]

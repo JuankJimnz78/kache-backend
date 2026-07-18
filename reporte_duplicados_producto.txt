@@ -1,0 +1,7 @@
+Total de Producto analizados: 1067
+Grupos de duplicados encontrados: 0
+Filas de Producto involucradas: 0
+Filas que se eliminarían si se fusiona todo: 0
+
+Conteo total actual (línea base para comparar antes/después de fusionar):
+  Precio=1083 Favorito=5 ItemComparacion=13 AlertaPrecio=7 ReporteProducto=0 HistorialPrecio=110
