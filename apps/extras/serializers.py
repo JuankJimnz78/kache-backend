@@ -1,5 +1,7 @@
 from rest_framework import serializers
 
+from apps.catalogo.serializers import ProductoSerializer
+
 from .models import (
     PerfilUsuario, Publicidad, Favorito, AlertaPrecio,
     Notificacion, ReporteProducto, Resena,
@@ -22,9 +24,11 @@ class PublicidadSerializer(serializers.ModelSerializer):
 
 
 class FavoritoSerializer(serializers.ModelSerializer):
+    producto_detalle = ProductoSerializer(source="producto", read_only=True)
+
     class Meta:
         model = Favorito
-        fields = ["id", "producto", "fecha_agregado"]
+        fields = ["id", "producto", "producto_detalle", "fecha_agregado"]
 
 
 class AlertaPrecioSerializer(serializers.ModelSerializer):
@@ -46,6 +50,12 @@ class ReporteProductoSerializer(serializers.ModelSerializer):
 
 
 class ResenaSerializer(serializers.ModelSerializer):
+    usuario = serializers.IntegerField(source="usuario_id", read_only=True)
+    username = serializers.CharField(source="usuario.username", read_only=True)
+
     class Meta:
         model = Resena
-        fields = ["id", "comercio", "calificacion", "comentario", "fecha"]
+        fields = [
+            "id", "usuario", "username", "comercio", "calificacion",
+            "comentario", "fecha",
+        ]

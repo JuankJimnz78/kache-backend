@@ -1,5 +1,8 @@
-from rest_framework import generics
+from django.db import IntegrityError
+from rest_framework import generics, status
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.response import Response
 
 from .models import (
     PerfilUsuario, Publicidad, Favorito, AlertaPrecio,
@@ -67,12 +70,27 @@ class AlertaPrecioDetailView(generics.RetrieveUpdateDestroyAPIView):
         return AlertaPrecio.objects.filter(usuario=self.request.user)
 
 
+class NotificacionPagination(PageNumberPagination):
+    """
+    Permite al cliente pedir page_size=1 para leer solo el `count` (ej. badge
+    de no leídas) sin traer resultados que no necesita. Tope en 100 para que
+    nadie pida la tabla completa en una sola página.
+    """
+    page_size_query_param = "page_size"
+    max_page_size = 100
+
+
 class NotificacionListView(generics.ListAPIView):
     serializer_class = NotificacionSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = NotificacionPagination
 
     def get_queryset(self):
-        return Notificacion.objects.filter(usuario=self.request.user)
+        qs = Notificacion.objects.filter(usuario=self.request.user)
+        leida = self.request.query_params.get("leida")
+        if leida is not None:
+            qs = qs.filter(leida=leida.lower() == "true")
+        return qs
 
 
 class NotificacionMarcarLeidaView(generics.UpdateAPIView):
@@ -100,7 +118,6 @@ class ReporteProductoCreateView(generics.ListCreateAPIView):
 
 class ResenaListCreateView(generics.ListCreateAPIView):
     serializer_class = ResenaSerializer
-    permission_classes = [AllowAny]
 
     def get_permissions(self):
         if self.request.method == "POST":
@@ -108,11 +125,23 @@ class ResenaListCreateView(generics.ListCreateAPIView):
         return [AllowAny()]
 
     def get_queryset(self):
-        qs = Resena.objects.all()
+        qs = Resena.objects.select_related("usuario").all()
         comercio = self.request.query_params.get("comercio")
         if comercio:
             qs = qs.filter(comercio_id=comercio)
         return qs
 
-    def perform_create(self, serializer):
-        serializer.save(usuario=self.request.user)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            serializer.save(usuario=request.user)
+        except IntegrityError:
+            return Response(
+                {"detail": "Ya reseñaste este comercio."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        headers = self.get_success_headers(serializer.data)
+        return Response(
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+        )

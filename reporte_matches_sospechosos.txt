@@ -1,0 +1,69 @@
+Total de Producto con 2+ Precio: 16
+Umbral de diferencia relativa considerado sospechoso: 20%
+Casos por encima del umbral: 6
+
+=== Todos los productos fusionados, ordenados de mayor a menor diferencia ===
+
+id=1213 | 'Pintura en Base agua Bucanero para canchas Base UI 1 gl. - CONDOR' | marca='condor' | cantidad='volumen:3785' | diferencia=57% ** SOSPECHOSO **
+    Ferrisariato: $17.05
+    Kywi: $26.77
+
+id=229 | 'Arroz Blanco REAL 5000 G' | marca='real' | cantidad='peso:5000' | diferencia=48% ** SOSPECHOSO **
+    Supermaxi: $7.02
+    Coral: $10.38
+
+id=194 | 'Aceite De Aguacate Y Taisha En Spray ECOLOVE 180 Ml' | marca='ecolove' | cantidad='volumen:180' | diferencia=31% ** SOSPECHOSO **
+    Coral: $6.09
+    Supermaxi: $7.96
+
+id=274 | 'Arroz Blanco Envejecido CASA DEL ARROZ 5000 G' | marca='casa del arroz' | cantidad='peso:5000' | diferencia=25% ** SOSPECHOSO **
+    Supermaxi: $5.38
+    Coral: $6.70
+
+id=1378 | 'Bloqueador de humedad 3 en 1 "SELLAMUR" en presentación de 1 gl. - PINTUCO' | marca='pintuco' | cantidad='volumen:3785' | diferencia=22% ** SOSPECHOSO **
+    Ferrisariato: $28.99
+    Kywi: $35.32
+
+id=1268 | 'Esmalte alquídico sintético de secado rápido y de acabado BRILLANTE; 1 l. - PINTURAS UNIDAS' | marca='pinturas unidas' | cantidad='volumen:1000' | diferencia=21% ** SOSPECHOSO **
+    Kywi: $5.19
+    Ferrisariato: $6.30
+
+id=175 | 'Aceite Comestible 50% Menos Grasa Saturada LA FAVORITA 900 Ml' | marca='la favorita' | cantidad='volumen:900' | diferencia=19%
+    Coral: $2.37
+    Supermaxi: $2.82
+
+id=169 | 'Aceite Comestible 50% Menos Grasa Saturada LA FAVORITA 2000 Ml' | marca='la favorita' | cantidad='volumen:2000' | diferencia=16%
+    Coral: $5.11
+    Supermaxi: $5.91
+
+id=1196 | 'Pintura látex UNICOLATEX Marfil tipo 3 para ambientes internos 1gl. - PINTURAS UNIDAS' | marca='pinturas unidas' | cantidad='volumen:3785' | diferencia=14%
+    Ferrisariato: $20.95
+    Kywi: $23.85
+
+id=172 | 'Aceite Comestible Vegetal De Soya ALESOL 900 Ml' | marca='alesol' | cantidad='volumen:900' | diferencia=13%
+    Coral: $2.38
+    Supermaxi: $2.70
+
+id=1277 | 'Esmalte brillante de secado rápido para decoración y protección de estructuras metálicas y de madera. 1 litro - PINTUCO' | marca='pintuco' | cantidad='volumen:1000' | diferencia=7%
+    Kywi: $8.09
+    Ferrisariato: $8.69
+
+id=1274 | 'Esmalte sintético brillante para metal, madera y mampostería; 125 ML - CONDOR' | marca='condor' | cantidad='volumen:125' | diferencia=7%
+    Ferrisariato: $1.45
+    Kywi: $1.55
+
+id=1250 | 'Esmalte Tan Brillante Rojo Siena 1 litro - CONDOR' | marca='condor' | cantidad='volumen:1000' | diferencia=4%
+    Kywi: $5.20
+    Ferrisariato: $5.39
+
+id=238 | 'Arroz Blanco Grano Largo Y Limpio REAL 25 Lb' | marca='real' | cantidad='peso:11340' | diferencia=2%
+    Supermaxi: $20.52
+    Coral: $20.92
+
+id=218 | 'Aceite Comestible Vegetal De Girasol ALESOL 1800 Ml' | marca='alesol' | cantidad='volumen:1800' | diferencia=2%
+    Supermaxi: $5.18
+    Coral: $5.26
+
+id=307 | 'Arroz Viejo Grano Largo Y Limpio REAL 2 Kg' | marca='real' | cantidad='peso:2000' | diferencia=0%
+    Supermaxi: $4.19
+    Coral: $4.21

@@ -21,7 +21,7 @@ class ComercioListCreateView(generics.ListCreateAPIView):
         return ComercioSerializer
 
     def get_queryset(self):
-        from django.db.models import Case, When, IntegerField, Q
+        from django.db.models import Avg, Case, Count, IntegerField, Q, When
         from django.utils import timezone
 
         qs = Comercio.objects.all()
@@ -34,6 +34,15 @@ class ComercioListCreateView(generics.ListCreateAPIView):
         activo = params.get("activo")
         if activo is not None:
             qs = qs.filter(activo=activo.lower() == "true")
+
+        # Única relación to-many anotada acá (resenas), sin otro filtro/join
+        # sobre ella en este queryset, así que Avg/Count directos son seguros
+        # (no hay riesgo de join duplicado como si hubiera otro .filter()
+        # cruzando la misma relación).
+        qs = qs.annotate(
+            promedio_calificacion=Avg("resenas__calificacion"),
+            total_resenas=Count("resenas", distinct=True),
+        )
 
         hoy = timezone.now().date()
         qs = qs.annotate(
