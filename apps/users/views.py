@@ -1,3 +1,5 @@
+from google.auth.transport import requests as google_requests
+from google.oauth2 import id_token as google_id_token
 from rest_framework import status, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
@@ -15,6 +17,7 @@ from django.db import IntegrityError
 from .serializers import (
     LoginSerializer,
     RegisterSerializer,
+    GoogleAuthSerializer,
     PasswordResetRequestSerializer,
     PasswordResetConfirmSerializer,
     UserSerializer,
@@ -74,6 +77,71 @@ def register_view(request):
         "email": user.email,
         "is_staff": user.is_staff,
     }, status=status.HTTP_201_CREATED)
+
+
+def _username_desde_email(email):
+    """Genera un username único a partir del local-part del email (para
+    cuentas creadas por Google, que no traen username)."""
+    base = email.split("@")[0][:150] or "usuario_google"
+    username = base
+    sufijo = 1
+    while User.objects.filter(username=username).exists():
+        sufijo += 1
+        username = f"{base}{sufijo}"[:150]
+    return username
+
+
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def google_auth_view(request):
+    serializer = GoogleAuthSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+
+    try:
+        payload = google_id_token.verify_oauth2_token(
+            serializer.validated_data["id_token"],
+            google_requests.Request(),
+            settings.GOOGLE_CLIENT_ID,
+        )
+    except ValueError:
+        return Response(
+            {"detail": "Token de Google inválido o expirado."},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
+
+    email = payload.get("email")
+    if not email or not payload.get("email_verified"):
+        return Response(
+            {"detail": "El token de Google no tiene un correo verificado."},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
+
+    user = User.objects.filter(email=email).first()
+    if user is None:
+        user = User(
+            username=_username_desde_email(email),
+            email=email,
+            first_name=payload.get("given_name", ""),
+            last_name=payload.get("family_name", ""),
+        )
+        user.set_unusable_password()
+        user.save()
+
+    if not user.is_active:
+        return Response(
+            {"detail": "Cuenta inactiva."},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
+
+    refresh = RefreshToken.for_user(user)
+    return Response({
+        "access": str(refresh.access_token),
+        "refresh": str(refresh),
+        "user_id": user.id,
+        "username": user.username,
+        "email": user.email,
+        "is_staff": user.is_staff,
+    })
 
 
 @api_view(["POST"])

@@ -16,6 +16,7 @@ dependencies = [
     "requests>=2.34.2",
     "playwright>=1.61.0",
     "beautifulsoup4>=4.15.0",
+    "google-auth>=2.56.0",
 ]
 
 [tool.hatch.build.targets.wheel]
