@@ -34,6 +34,10 @@ class RegisterSerializer(serializers.Serializer):
         return User.objects.create_user(**validated_data)
 
 
+class GoogleAuthSerializer(serializers.Serializer):
+    id_token = serializers.CharField(write_only=True)
+
+
 class PasswordResetRequestSerializer(serializers.Serializer):
     email = serializers.EmailField()
 
