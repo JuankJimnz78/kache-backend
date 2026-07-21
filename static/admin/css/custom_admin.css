@@ -1,0 +1,15 @@
+/*
+ * PreciosEC -- tema navy de marca para Django Admin.
+ *
+ * Django Admin (5+) define su paleta como CSS custom properties en :root
+ * (ver admin/css/base.css). #header y los botones "primarios"/"default"
+ * ya usan var(--secondary) / var(--default-button-bg) internamente, así
+ * que sobreescribir esas variables (en vez de forzar selectores con
+ * !important) alcanza al header y a los botones a la vez, y se respeta
+ * también en modo oscuro (dark_mode.css no redefine estas variables).
+ */
+:root {
+    --secondary: #1A237E;         /* fondo de #header y botones "Guardar y..." */
+    --default-button-bg: #1A237E; /* botón principal "Guardar" (no se deriva de --secondary) */
+    --header-color: #ffffff;      /* texto del header en blanco */
+}

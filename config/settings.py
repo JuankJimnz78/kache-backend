@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 from datetime import timedelta
+from urllib.parse import urlparse
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,7 +57,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -102,8 +103,41 @@ USE_TZ = True
 # ── Static / Media ─────────────────────────────────────────────
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# ── Cloudflare R2 (storage de archivos subidos, ej. logos de comercio) ──
+# R2 es compatible con la API de S3 -- se usa el backend S3 de
+# django-storages apuntando al endpoint de R2. Las variables (nombres
+# exactos que ya existen en el .env del servidor) se leen con default=""
+# para que un entorno local sin R2 configurado no rompa al arrancar
+# (falla recién al intentar subir un archivo, con un error claro).
+R2_ACCESS_KEY_ID = config("R2_ACCESS_KEY_ID", default="")
+R2_SECRET_ACCESS_KEY = config("R2_SECRET_ACCESS_KEY", default="")
+R2_ENDPOINT_URL = config("R2_ENDPOINT_URL", default="")
+R2_BUCKET_NAME = config("R2_BUCKET_NAME", default="")
+R2_PUBLIC_URL = config("R2_PUBLIC_URL", default="")
+
+AWS_ACCESS_KEY_ID = R2_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY = R2_SECRET_ACCESS_KEY
+AWS_STORAGE_BUCKET_NAME = R2_BUCKET_NAME
+AWS_S3_ENDPOINT_URL = R2_ENDPOINT_URL
+AWS_S3_REGION_NAME = "auto"
+AWS_S3_CUSTOM_DOMAIN = urlparse(R2_PUBLIC_URL).netloc or None
+AWS_S3_URL_PROTOCOL = "https:"
+AWS_DEFAULT_ACL = None  # R2 no soporta ACLs de S3; el bucket controla acceso público
+AWS_QUERYSTRING_AUTH = False  # URLs públicas simples, sin firma
+AWS_S3_FILE_OVERWRITE = False  # no pisar un archivo si se sube otro con el mismo nombre
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
