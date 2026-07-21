@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!--
+    PreciosEC -- favicon del admin, 3 rombos con colores reales de marca
+    (componente K de landing-page.tsx en el frontend): un tono medio de
+    cada familia (naranja/azul/rojo) -- a tamaño de favicon (16-32px) usar
+    los 18 tonos completos se vería borroso, así que se simplifica a 1 por
+    familia sin inventar ningún color nuevo.
+  -->
+  <polygon points="16,1 24,9 16,17 8,9" fill="#FFB300"/>
+  <polygon points="9,13 17,21 9,29 1,21" fill="#1976D2"/>
+  <polygon points="23,13 31,21 23,29 15,21" fill="#D32F2F"/>
+</svg>
