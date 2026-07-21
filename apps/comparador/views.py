@@ -31,7 +31,7 @@ class ListaComparacionListCreateView(generics.ListCreateAPIView):
         return Response(ListaComparacionSerializer(lista).data, status=status.HTTP_201_CREATED)
 
 
-class ListaComparacionDetailView(generics.RetrieveDestroyAPIView):
+class ListaComparacionDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ListaComparacionSerializer
     permission_classes = [IsAuthenticated]
 
