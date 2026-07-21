@@ -12,4 +12,14 @@
     --secondary: #1A237E;         /* fondo de #header y botones "Guardar y..." */
     --default-button-bg: #1A237E; /* botón principal "Guardar" (no se deriva de --secondary) */
     --header-color: #ffffff;      /* texto del header en blanco */
+    --link-fg: #1A237E;           /* color de enlaces (a:link/a:visited) en listados, detalle, etc. */
 }
+
+/*
+ * --link-fg SÍ se redefine en dark_mode.css (a diferencia de --secondary y
+ * --default-button-bg, que ese archivo no toca) -- Django usa un azul claro
+ * (#81d4fa) ahí a propósito, por contraste contra el fondo casi negro.
+ * Forzar el navy también en modo oscuro dejaría los links casi ilegibles,
+ * así que a propósito NO se sobreescribe --link-fg dentro de
+ * html[data-theme="dark"] / (prefers-color-scheme: dark).
+ */

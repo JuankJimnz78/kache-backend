@@ -6,6 +6,10 @@ from django.conf.urls.static import static
 admin.site.site_header = "PreciosEC Admin"
 admin.site.site_title = "PreciosEC"
 admin.site.index_title = "Panel de administración"
+# Alimenta {{ site_url }} en admin/base.html -- el link "Ver sitio" del
+# header ya es un bloque nativo de Django (userlinks), solo hacía falta
+# apuntarlo a la app real en vez del "/" por defecto.
+admin.site.site_url = "https://precios-ec.uaeftt-ute.site"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
