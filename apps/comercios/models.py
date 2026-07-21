@@ -16,7 +16,14 @@ class Comercio(models.Model):
 
     nombre = models.CharField(max_length=100)
     tipo = models.CharField(max_length=20, choices=TIPO_CHOICES)
-    logo_url = models.URLField(blank=True, null=True)
+    logo_url = models.URLField(
+        blank=True, null=True,
+        help_text="Se recalcula solo a partir de 'logo' al guardar -- no editar a mano.",
+    )
+    logo = models.ImageField(
+        upload_to="comercios/logos/", blank=True, null=True,
+        help_text="Subir un archivo acá lo sube a R2 y actualiza logo_url automáticamente.",
+    )
     sitio_web = models.URLField(blank=True, null=True)
     activo = models.BooleanField(default=True)
 
@@ -34,6 +41,17 @@ class Comercio(models.Model):
 
     def __str__(self):
         return f"{self.nombre} ({self.get_tipo_display()})"
+
+    def save(self, *args, **kwargs):
+        # El upload_to (y por lo tanto el nombre final del archivo en R2)
+        # recién se resuelve DENTRO de super().save() -- self.logo.url no es
+        # confiable antes de eso. Por eso se guarda primero y, si logo_url
+        # quedó desactualizado, se corrige con un .update() (no otro save(),
+        # para no reentrar en este método).
+        super().save(*args, **kwargs)
+        if self.logo and self.logo_url != self.logo.url:
+            self.logo_url = self.logo.url
+            type(self).objects.filter(pk=self.pk).update(logo_url=self.logo_url)
 
     @property
     def destacado_activo(self):
