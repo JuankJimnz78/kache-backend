@@ -26,12 +26,20 @@ NOMBRE_LOCAL_DEFAULT = "Supermaxi Iñaquito"
 
 # Aceites y Arroz: verificadas contra el sitio real, ambas se cruzan con
 # marcas nacionales que también vende Coral (La Favorita, Banquete, Real).
+# Leches: "Leches y Sustitutos" (padre de Enteras/Descremadas/Deslactosadas/
+# etc., 383 productos) verificada contra el sitio real -- es el equivalente
+# más cercano a como Coral mezcla todo eso en una sola categoría "Leches".
 CATEGORIAS_OBJETIVO = [
     ("https://www.supermaxi.com/product-category/aceites-y-grasas-alacena/", "Aceites"),
     ("https://www.supermaxi.com/product-category/arroz-alacena/", "Arroz"),
+    ("https://www.supermaxi.com/product-category/leches-y-sustitutos-lacteos/", "Leches"),
 ]
 
-MAX_PAGINAS_POR_CATEGORIA = 5
+# Leches y Sustitutos tiene 383 productos (~12 páginas a 32 por página) frente
+# a los ~50-100 de Aceites/Arroz -- se sube el techo para cubrirla completa.
+# No afecta el tiempo de las categorías más chicas: el loop corta apenas una
+# página llega vacía.
+MAX_PAGINAS_POR_CATEGORIA = 12
 
 
 class Command(BaseCommand):

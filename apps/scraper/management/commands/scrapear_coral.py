@@ -27,9 +27,12 @@ NOMBRE_TIENDA_DEFAULT = "Calderon - Quito"
 
 # Aceites y Arroz: verificadas contra el sitio real, ambas se cruzan con
 # marcas nacionales que también vende Supermaxi (La Favorita, Banquete, Real).
+# Leches: verificada contra el sitio real (185 productos), se cruza con
+# Supermaxi (Toni, Vita, Parmalat).
 CATEGORIAS_OBJETIVO = [
     ("https://coralhipermercados.com/comisariato/condimentos-y-aderezos/aceites.html", "Aceites"),
     ("https://coralhipermercados.com/comisariato/alimentos-secos-y-despensa/arroz.html", "Arroz"),
+    ("https://coralhipermercados.com/comisariato/lacteos-y-derivados/leches.html", "Leches"),
 ]
 
 # Productos puntuales que queremos garantizar, con su categoría destino.
@@ -37,7 +40,11 @@ PRODUCTOS_DIRECTOS = [
     ("https://coralhipermercados.com/leche-entera-parmalat-900ml-269.html", "Leches"),
 ]
 
-MAX_PAGINAS_POR_CATEGORIA = 8
+# Leches tiene 185 productos (~16 páginas a 12 por página) frente a los ~50-100
+# de Aceites/Arroz -- se sube el techo para cubrirla completa. No afecta el
+# tiempo de las categorías más chicas: el loop corta apenas una página llega
+# vacía.
+MAX_PAGINAS_POR_CATEGORIA = 16
 
 
 class Command(BaseCommand):

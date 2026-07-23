@@ -63,6 +63,16 @@ MARCAS_CONOCIDAS = {
     # Fybeca (ver diagnostico previo a agregar la categoria).
     "vick": ["vick"],
     "bisolvon": ["bisolvon"],
+    # Leches: Toni, Vita y Parmalat confirmadas en el catalogo real de Coral
+    # (las 185 paginas de su categoria Leches se revisaron a mano). No se
+    # pudo verificar el lado de Supermaxi de la misma forma porque su
+    # listado de productos se renderiza con JS y no expone una API publica
+    # -- son marcas lecheras nacionales de alta distribucion, así que es
+    # razonable esperar que también estén ahí, pero queda pendiente de
+    # confirmar con el primer scrapeo real.
+    "toni": ["toni"],
+    "vita": ["vita"],
+    "parmalat": ["parmalat"],
 }
 
 
