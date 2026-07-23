@@ -29,6 +29,9 @@ URL_BASE = "https://www.farmaciascruzazul.ec"
 CATEGORIAS_OBJETIVO = [
     ("tratamientos-y-salud/alivio-del-dolor/dolor-y-fiebre-de-adultos", "Dolor y Fiebre"),
     ("vitaminas-y-suplementos", "Vitaminas y Suplementos"),
+    # Gripe y Tos: verificada contra el sitio real, se cruza con Fybeca
+    # (misma marca Vick confirmada en el listado de ambos).
+    ("tratamientos-y-salud/gripes-y-resfriados", "Gripe y Tos"),
 ]
 
 PRODUCTOS_POR_PAGINA = 50
