@@ -34,6 +34,12 @@ GRID_URL = f"{URL_BASE}/on/demandware.store/Sites-FybecaEcuador-Site/es_EC/Searc
 CATEGORIAS_OBJETIVO = [
     ("dolor_y_fiebre", "Dolor y Fiebre"),
     ("vitaminas_y_minerales", "Vitaminas y Suplementos"),
+    # Gripe y Tos: Fybeca no tiene un cgid propio para "gripe/tos/resfrio"
+    # (se probaron varias variantes contra el sitio real y ninguna existe),
+    # así que se usa "respiratorio" -- el bucket de Medicinas más cercano.
+    # Es más ancho que el de Cruz Azul (incluye alergias/asma, ej. Zyrtec,
+    # Seretide), así que se espera menor tasa de match que en Dolor y Fiebre.
+    ("respiratorio", "Gripe y Tos"),
 ]
 
 PRODUCTOS_POR_PAGINA = 18

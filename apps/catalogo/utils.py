@@ -59,6 +59,10 @@ MARCAS_CONOCIDAS = {
     "umbral": ["umbral"],
     "umbramil": ["umbramil"],
     "x ray": ["x ray", "xray"],
+    # Gripe y Tos: confirmadas por interseccion real entre Cruz Azul y
+    # Fybeca (ver diagnostico previo a agregar la categoria).
+    "vick": ["vick"],
+    "bisolvon": ["bisolvon"],
 }
 
 
